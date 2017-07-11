@@ -17,9 +17,15 @@
         它会去调用UserDetailsService的loadFromUsername，参数是token的username，然后比对password，检查userDetails的一些状态。
         如果一切正常，那么会返回Authentication。返回的Authentication的用户名和密码是正确的用户名和密码，并且还放入了之前查询出的Roles。
         调用getAuthentication然后调用getPrinciple可以得到之前听过UserDetailsService查询出的UserDetails
-   - 在Controller中使用@PreAuthorize等注解需要在spring-web配置文件中扫描security包下的类        
+   - 在Controller中使用@PreAuthorize等注解需要在spring-web配置文件中扫描security包下的类  
 
+## 引用application.properties中的属性的方式：@ConfigurationProperties(prefix = "spring.mail") + @Component + setter + getter
 
+## 引用其他自定义配置文件中的属性的方式：
+     - @Component
+     - @ConfigurationProperties(prefix = "auth")
+     - @PropertySource("classpath:auth.properties")
+     - setter & getter 
 
 ### 用户模块
     - 获取图片验证码

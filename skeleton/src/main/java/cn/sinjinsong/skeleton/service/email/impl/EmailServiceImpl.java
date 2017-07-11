@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.service.email.impl;
 
 import cn.sinjinsong.common.exception.file.FileNotFoundException;
-import cn.sinjinsong.common.util.PropertyConfigurer;
+import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 import cn.sinjinsong.skeleton.service.email.EmailService;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,9 +35,8 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     private TemplateEngine templateEngine;
     @Autowired
-    private PropertyConfigurer subjectProperties;
+    private EmailSubjectProperties subjectProperties;
     private String username;
-    private static final String SUFFIX = ".html";
     
     @Override
     public void sendHTML(String to, String subject, Map<String, Object> params, List<String> filePaths) {
@@ -45,7 +44,7 @@ public class EmailServiceImpl implements EmailService {
         for (Map.Entry<String, Object> entry : params.entrySet()) {
             context.setVariable(entry.getKey(), entry.getValue());
         }
-        String emailContent = templateEngine.process(subject + SUFFIX, context);
+        String emailContent = templateEngine.process(subject , context);
         send(to, subjectProperties.getProperty(subject), emailContent, filePaths);
     }
 
@@ -56,7 +55,7 @@ public class EmailServiceImpl implements EmailService {
         for (Map.Entry<String, Object> entry : params.entrySet()) {
             context.setVariable(entry.getKey(), entry.getValue());
         }
-        String emailContent = templateEngine.process(subject + SUFFIX, context);
+        String emailContent = templateEngine.process(subject, context);
         for (int i = 0; i < tos.size(); ++i) {
             sb.append(tos.get(i));
             if (i != tos.size() - 1) {

@@ -220,3 +220,45 @@
 2017-07-11 18:26:38.012 INFO  [http-nio-8080-exec-1] c.s.s.s.v.i.VerificationManagerImpl [VerificationManagerImpl.java : 21] - expireTime:300
 2017-07-11 18:26:38.113 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 60] - uuid:ED7427C6A0C4407484FCFFD2DB522C7A
 2017-07-11 18:26:38.115 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 61] - value:6DWZ
+2017-07-11 22:33:14.315 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [StartupInfoLogger.java : 48] - Starting SpringBootSkeletonApplication on LAPTOP-0E5JL9PN with PID 8016 (D:\idea\SpringBootSkeleton\skeleton\target\classes started by songx in D:\idea\SpringBootSkeleton)
+2017-07-11 22:33:14.317 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-11 22:33:28.146 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [StartupInfoLogger.java : 57] - Started SpringBootSkeletonApplication in 15.651 seconds (JVM running for 17.511)
+2017-07-11 22:33:45.746 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:33:45.758 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:33:45.768 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:33:45.768 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:33:45.981 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 56] - authenticationProperties.getCaptchaExpireTime():300
+2017-07-11 22:33:45.981 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 57] - 86400
+2017-07-11 22:33:45.982 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 58] - 86400
+2017-07-11 22:33:45.982 INFO  [http-nio-8080-exec-1] c.s.s.s.v.i.VerificationManagerImpl [VerificationManagerImpl.java : 20] - creating...
+2017-07-11 22:33:45.983 INFO  [http-nio-8080-exec-1] c.s.s.s.v.i.VerificationManagerImpl [VerificationManagerImpl.java : 21] - expireTime:300
+2017-07-11 22:33:46.044 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 60] - uuid:86F1829A5A17473993DA1B697BD2F1B1
+2017-07-11 22:33:46.045 INFO  [http-nio-8080-exec-1] c.s.s.c.user.CaptchaController [CaptchaController.java : 61] - value:20B1
+2017-07-11 22:34:30.316 INFO  [http-nio-8080-exec-3] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:34:30.316 INFO  [http-nio-8080-exec-3] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:34:30.319 INFO  [http-nio-8080-exec-3] c.s.s.s.e.JWTAuthenticationEntryPoint [JWTAuthenticationEntryPoint.java : 29] - 到达JWTAuthenticationEntryPoint
+2017-07-11 22:34:52.249 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:34:52.249 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:34:52.250 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:34:52.251 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:36:30.737 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [StartupInfoLogger.java : 48] - Starting SpringBootSkeletonApplication on LAPTOP-0E5JL9PN with PID 10112 (D:\idea\SpringBootSkeleton\skeleton\target\classes started by songx in D:\idea\SpringBootSkeleton)
+2017-07-11 22:36:30.738 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-11 22:36:43.268 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [StartupInfoLogger.java : 57] - Started SpringBootSkeletonApplication in 13.622 seconds (JVM running for 14.59)
+2017-07-11 22:37:09.784 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:37:09.791 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:37:09.801 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:37:09.801 INFO  [http-nio-8080-exec-2] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:37:10.001 INFO  [http-nio-8080-exec-2] c.s.s.c.user.TokenController [TokenController.java : 90] - UserDO(id=1, username=admin, password=$2a$10$TK1o7JAlSdGU.IYnXHx4yOFoLfAxKEAl9BSxKcbjD/wni.YvRZHnm, nickname=orange's cat, realName=sinjinsong, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=songxinjianzx@163.com, phone=15062278865, roles=[RoleDO(id=1, roleName=role_admin), RoleDO(id=2, roleName=role_user)], userStatus=ACTIVATED, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg)
+2017-07-11 22:37:25.281 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:37:25.311 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 45] - checking authentication TokenCheckResult{isValid=true, username='admin', exception=null}
+2017-07-11 22:37:25.314 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 54] - authenticated user TokenCheckResult{isValid=true, username='admin', exception=null} ,setting security context
+2017-07-11 22:37:25.315 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:37:25.317 INFO  [http-nio-8080-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 45] - checking authentication TokenCheckResult{isValid=true, username='admin', exception=null}
+2017-07-11 22:37:55.216 INFO  [http-nio-8080-exec-3] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:37:55.217 INFO  [http-nio-8080-exec-3] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:37:55.218 INFO  [http-nio-8080-exec-3] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 22:37:55.218 INFO  [http-nio-8080-exec-3] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 22:37:55.284 INFO  [http-nio-8080-exec-3] c.s.s.controller.user.UserController [UserController.java : 94] - UserDO(id=null, username=user3, password=user3, nickname=user3, realName=user3, sex=M, birthday=null, regTime=null, email=songxinjianzx@126.com, phone=123456789, roles=null, userStatus=UNACTIVATED, avatar=null)
+2017-07-11 22:37:55.448 INFO  [http-nio-8080-exec-3] c.s.s.s.v.i.VerificationManagerImpl [VerificationManagerImpl.java : 20] - creating...
+2017-07-11 22:37:55.449 INFO  [http-nio-8080-exec-3] c.s.s.s.v.i.VerificationManagerImpl [VerificationManagerImpl.java : 21] - expireTime:86400
+2017-07-11 22:37:55.449 INFO  [http-nio-8080-exec-3] c.s.s.controller.user.UserController [UserController.java : 107] - songxinjianzx@126.com     17
