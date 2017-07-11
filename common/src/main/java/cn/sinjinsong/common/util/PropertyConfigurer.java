@@ -3,12 +3,14 @@ package cn.sinjinsong.common.util;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
 /**
  * Created by SinjinSong on 2017/5/5.
  */
+@Component
 public final class PropertyConfigurer extends PropertyPlaceholderConfigurer {
 
     private Properties props;       // 存取properties配置文件key-value结果

@@ -3,13 +3,15 @@ package cn.sinjinsong.skeleton.properties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by SinjinSong on 2017/4/27.
  */
 @Component
-@ConfigurationProperties(ignoreUnknownFields = false, prefix = "token",locations = "classpath:token.properties")
+@ConfigurationProperties(ignoreUnknownFields = false, prefix = "token")
+@PropertySource("classpath:token.properties")
 @Setter
 @Getter
 public class AuthenticationProperties {

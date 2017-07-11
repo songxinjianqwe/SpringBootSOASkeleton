@@ -1,0 +1,6 @@
+2017-07-11 16:15:24.697 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [StartupInfoLogger.java : 48] - Starting SpringBootSkeletonApplication on LAPTOP-0E5JL9PN with PID 428 (D:\idea\SpringBootSkeleton\skeleton\target\classes started by songx in D:\idea\SpringBootSkeleton)
+2017-07-11 16:15:24.698 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-11 16:15:37.246 INFO  [restartedMain] c.s.s.SpringBootSkeletonApplication [StartupInfoLogger.java : 57] - Started SpringBootSkeletonApplication in 13.554 seconds (JVM running for 14.398)
+2017-07-11 16:17:46.169 INFO  [http-nio-80-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 36] - 经过JWTAuthenticationTokenFilter
+2017-07-11 16:17:46.177 INFO  [http-nio-80-exec-1] c.s.s.s.f.JWTAuthenticationTokenFilter [JWTAuthenticationTokenFilter.java : 42] - Token无效
+2017-07-11 16:17:46.185 INFO  [http-nio-80-exec-1] c.s.s.s.e.JWTAuthenticationEntryPoint [JWTAuthenticationEntryPoint.java : 29] - 到达JWTAuthenticationEntryPoint

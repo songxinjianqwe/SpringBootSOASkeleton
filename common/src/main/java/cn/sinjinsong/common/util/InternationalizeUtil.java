@@ -1,7 +1,7 @@
 package cn.sinjinsong.common.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -16,7 +16,8 @@ import java.util.Locale;
 @Component
 public final  class InternationalizeUtil {
 	@Autowired
-	private ResourceBundleMessageSource ms;
+	private MessageSource ms;
+	
 	private static InternationalizeUtil util;
 	private InternationalizeUtil(){}
 	@PostConstruct

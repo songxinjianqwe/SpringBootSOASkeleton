@@ -1,5 +1,8 @@
 package cn.sinjinsong.skeleton.config;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -8,8 +11,10 @@ import org.springframework.context.support.ResourceBundleMessageSource;
  * Created by SinjinSong on 2017/7/11.
  */
 @Configuration
+@ConfigurationProperties(prefix = "spring.messages")
+@Getter
+@Setter
 public class InternationalizationConfig {
-    @Value(value = "${spring.messages.basename}")
     private String basename;
 
     @Bean(name = "messageSource")
@@ -18,5 +23,4 @@ public class InternationalizationConfig {
         messageSource.setBasename(basename);
         return messageSource;
     }
-}
 }

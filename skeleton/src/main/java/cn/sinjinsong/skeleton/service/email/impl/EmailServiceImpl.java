@@ -3,8 +3,10 @@ package cn.sinjinsong.skeleton.service.email.impl;
 import cn.sinjinsong.common.exception.file.FileNotFoundException;
 import cn.sinjinsong.common.util.PropertyConfigurer;
 import cn.sinjinsong.skeleton.service.email.EmailService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -24,6 +26,9 @@ import java.util.Map;
  */
 @Service
 @Async("emailExecutor")
+@ConfigurationProperties(prefix = "spring.mail")
+@Getter
+@Setter
 public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
@@ -31,18 +36,16 @@ public class EmailServiceImpl implements EmailService {
     private TemplateEngine templateEngine;
     @Autowired
     private PropertyConfigurer subjectProperties;
-    @Value("${mail.username}")
-    private String from;
-    @Value("${mail.suffix}")
-    private String suffix;
-
+    private String username;
+    private static final String SUFFIX = ".html";
+    
     @Override
     public void sendHTML(String to, String subject, Map<String, Object> params, List<String> filePaths) {
         Context context = new Context();
         for (Map.Entry<String, Object> entry : params.entrySet()) {
             context.setVariable(entry.getKey(), entry.getValue());
         }
-        String emailContent = templateEngine.process(subject + suffix, context);
+        String emailContent = templateEngine.process(subject + SUFFIX, context);
         send(to, subjectProperties.getProperty(subject), emailContent, filePaths);
     }
 
@@ -53,7 +56,7 @@ public class EmailServiceImpl implements EmailService {
         for (Map.Entry<String, Object> entry : params.entrySet()) {
             context.setVariable(entry.getKey(), entry.getValue());
         }
-        String emailContent = templateEngine.process(subject + suffix, context);
+        String emailContent = templateEngine.process(subject + SUFFIX, context);
         for (int i = 0; i < tos.size(); ++i) {
             sb.append(tos.get(i));
             if (i != tos.size() - 1) {
@@ -69,7 +72,7 @@ public class EmailServiceImpl implements EmailService {
         try {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
             //true表示需要创建一个multipart message
-            helper.setFrom(from);
+            helper.setFrom(username);
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(content, true);
