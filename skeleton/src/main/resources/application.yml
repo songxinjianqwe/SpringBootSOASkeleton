@@ -4,8 +4,7 @@ server:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-        basedir: /Skeleton
-    port: 80
+    port: 8080
 
 # mysql
 spring:
@@ -21,10 +20,11 @@ spring:
         date-format: yyyy-MM-dd HH:mm:ss
     #文件上传
     http:
-        multipart:
+      multipart: 
         max-file-size: 100MB
         max-request-size: 100MB
         enabled: true
+        
     #邮箱
     mail:
       host: smtp.163.com

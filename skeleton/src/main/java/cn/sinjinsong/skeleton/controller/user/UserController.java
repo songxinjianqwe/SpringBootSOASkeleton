@@ -164,7 +164,7 @@ public class UserController {
         UserDO user = findByKey(key, mode);
         //user 一定不为空
         String forgetPasswordCode = UUIDUtil.uuid();
-        verificationManager.createVerificationCode(forgetPasswordCode, String.valueOf(user.getId()), authenticationProperties.getForgetNameExpireTime());
+        verificationManager.createVerificationCode(forgetPasswordCode, String.valueOf(user.getId()), authenticationProperties.getForgetNameCodeExpireTime());
         log.info("{}   {}",user.getEmail(),user.getId());
         //发送邮件
         Map<String, Object> params = new HashMap<>();

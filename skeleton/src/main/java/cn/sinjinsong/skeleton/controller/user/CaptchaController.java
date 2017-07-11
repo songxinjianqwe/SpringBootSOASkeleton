@@ -53,6 +53,9 @@ public class CaptchaController {
         //返回响应头
         response.setHeader("captchaCode", uuid);
         //保存
+        log.info("authenticationProperties.getCaptchaExpireTime():{}",authenticationProperties.getCaptchaExpireTime());
+        log.info("{}",authenticationProperties.getTokenExpireTime());        
+        log.info("{}",authenticationProperties.getForgetNameCodeExpireTime());
         verificationManager.createVerificationCode(uuid, captcha.getValue(),authenticationProperties.getCaptchaExpireTime());
         log.info("uuid:{}",uuid);
         log.info("value:{}",captcha.getValue());

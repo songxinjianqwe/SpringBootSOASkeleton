@@ -23,20 +23,21 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class RESTWebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private JWTAuthenticationEntryPoint unauthorizedHandler;
     private UserDetailsService userDetailsService;
     private AccessDeniedHandler accessDeniedHandler;
-    
+
     @Autowired
-    public RESTWebSecurityConfig(JWTAuthenticationEntryPoint unauthorizedHandler,
-                                 UserDetailsService userDetailsService,
-                                 AccessDeniedHandler accessDeniedHandler){
+    public SecurityConfig(JWTAuthenticationEntryPoint unauthorizedHandler,
+                          UserDetailsService userDetailsService,
+                          AccessDeniedHandler accessDeniedHandler) {
         this.unauthorizedHandler = unauthorizedHandler;
         this.userDetailsService = userDetailsService;
         this.accessDeniedHandler = accessDeniedHandler;
-        
+
     }
+
     @Autowired
     public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
@@ -66,10 +67,12 @@ public class RESTWebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 // 由于使用的是JWT，我们这里不需要csrf
                 .csrf().disable()
+                .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler).and()
                 // 基于token，所以不需要session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                
                 //添加JWTFilter
                 .authorizeRequests()
                 //允许访问静态资源
@@ -109,9 +112,8 @@ public class RESTWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //获取token
                 .antMatchers(HttpMethod.POST, "/tokens").permitAll().and()
                 //除上面外的所有请求全部需要鉴权认证
-                .authorizeRequests().anyRequest().authenticated().and()
+                .authorizeRequests().anyRequest().authenticated().and();
                 //Filter要放到是否认证的配置之后
-                .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 
         // 禁用缓存
         httpSecurity

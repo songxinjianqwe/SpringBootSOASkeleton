@@ -1,12 +1,11 @@
 package cn.sinjinsong.skeleton.service.user;
 
 import cn.sinjinsong.skeleton.BaseSpringTest;
+import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-
-import java.util.Locale;
 
 /**
  * Created by SinjinSong on 2017/7/10.
@@ -17,17 +16,25 @@ public class UserServiceTest extends BaseSpringTest{
     private UserService userService;
     @Autowired
     private MessageSource ms;
+    @Autowired
+    private AuthenticationProperties authenticationProperties;
+    
     
     @Test
     public void findByUsername() throws Exception {
 //        UserDO user = userService.findByUsername("admin");
 //        System.out.println(user);
 //        log.info("user:{} ",user);
-        String message = ms.getMessage("i18n.TokenStateInvalid", null, Locale.getDefault());
-        log.info("message:{}",message);
+//        String message = ms.getMessage("i18n.TokenStateInvalid", null, Locale.getDefault());
+//        log.info("message:{}",message);
+        Integer captchaExpireTime = authenticationProperties.getCaptchaExpireTime();
+        log.info("captchaExpireTime:{}",captchaExpireTime);
+//        log.info("getExpireTime:{}",authenticationProperties.getTokenExpireTime());
+//        log.info("{}",authenticationProperties.getActivationCodeExpireTime());
+//        log.info("{}",authenticationProperties.getForgetNameCodeExpireTime());
+//        log.info("{}",authenticationProperties.getSecretKey());
     }
     
-
     @Test
     public void findByPhone() throws Exception {
     }

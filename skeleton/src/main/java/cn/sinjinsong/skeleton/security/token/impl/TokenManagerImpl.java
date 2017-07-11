@@ -64,13 +64,13 @@ public class TokenManagerImpl implements TokenManager {
                 .signWith(signatureAlgorithm, signingKey);
 
         //添加Token过期时间  
-        long expireTime = System.currentTimeMillis() + authenticationProperties.getExpireTime() * 1000;
+        long expireTime = System.currentTimeMillis() + authenticationProperties.getTokenExpireTime() * 1000;
         Date expireDateTime = new Date(expireTime);
         builder.setExpiration(expireDateTime);
         //生成JWT  
         String token = builder.compact();
         //放入缓存
-        redisCacheManager.putWithExpireTime(String.valueOf(username.hashCode()), token, authenticationProperties.getExpireTime());
+        redisCacheManager.putWithExpireTime(String.valueOf(username.hashCode()), token, authenticationProperties.getTokenExpireTime());
         return token;
     }
 
