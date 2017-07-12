@@ -26,6 +26,12 @@
      - @ConfigurationProperties(prefix = "auth")
      - @PropertySource("classpath:auth.properties")
      - setter & getter 
+## 所以写静态资源位置的时候，不要带上映射的目录名（如/static/，/public/ ，/resources/，/META-INF/resources/）！
+
+## 所有的html都放在templates下面，只有index.html能直接访问，其他均不可，必须通过Controller的转发
+## 静态资源都放在static下面，访问时Spring Security会检查URL，根据URL进行拦截。如果通过，那么会交给ViewResolver，添加前面的/static（无需配置，SpringBoot自动完成），得到最终的真实路径
+
+## 访问swagger
 
 ### 用户模块
     - 获取图片验证码

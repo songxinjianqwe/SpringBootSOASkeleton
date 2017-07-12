@@ -72,7 +72,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler).and()
                 // 基于token，所以不需要session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                
                 //添加JWTFilter
                 .authorizeRequests()
                 //允许访问静态资源
@@ -83,7 +82,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/favicon.ico",
                         "/**/*.html",
                         "/**/*.css",
-                        "/**/*.js").permitAll()
+                        "/**/*.js",
+                        "/image/**").permitAll()
                 //允许访问swagger
                 .antMatchers(
                         "/v2/api-docs",

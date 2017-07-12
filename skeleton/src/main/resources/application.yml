@@ -37,6 +37,7 @@ spring:
           smtp:
             auth: true
             timeout: 25000
+    
     #国际化        
     messages:
       basename: i18n/messages
@@ -64,4 +65,3 @@ pagehelper:
   support-methods-arguments: true
   auto-runtime-dialect: true
 
-hehe: sd

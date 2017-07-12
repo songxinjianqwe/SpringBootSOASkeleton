@@ -27,7 +27,7 @@ public class FileController {
     private UserService service;
     
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "users", method = RequestMethod.POST)
+    @RequestMapping(value = "/users", method = RequestMethod.POST)
     @ApiOperation(value = "用户文件上传", response = Void.class)
     @ApiResponses(value = {
             @ApiResponse(code = 400, message = "文件格式不支持"),
@@ -48,7 +48,7 @@ public class FileController {
         }
     }
 
-    @RequestMapping(value = "public", method = RequestMethod.POST)
+    @RequestMapping(value = "/public", method = RequestMethod.POST)
     @ApiOperation(value = "公共文件上传", response = Void.class)
     @ApiResponses(value = {
             @ApiResponse(code = 400, message = "文件格式不支持"),
