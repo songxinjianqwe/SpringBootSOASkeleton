@@ -2,6 +2,7 @@ package cn.sinjinsong.skeleton.scheduler;
 
 
 import cn.sinjinsong.common.cache.RedisCacheManager;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -55,6 +56,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
+@Slf4j
 public class Scheduler {
     @Autowired
     private RedisCacheManager redisCacheManager;
@@ -64,7 +66,7 @@ public class Scheduler {
 //     */
 //    @Scheduled(cron = "0 0/1 * * * ? ")
 //    public void cacheClear() {
-//        System.out.println("清空缓存");
+//        log.info("清空缓存");
 //        redisCacheManager.clearCache();
 //    }
 }

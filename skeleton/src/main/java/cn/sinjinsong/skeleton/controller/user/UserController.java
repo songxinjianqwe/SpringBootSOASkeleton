@@ -12,7 +12,6 @@ import cn.sinjinsong.skeleton.exception.user.QueryUserModeNotFoundException;
 import cn.sinjinsong.skeleton.exception.user.UserNotFoundException;
 import cn.sinjinsong.skeleton.exception.user.UsernameExistedException;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
-import cn.sinjinsong.skeleton.security.domain.JWTUser;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
 import cn.sinjinsong.skeleton.service.email.EmailService;
 import cn.sinjinsong.skeleton.service.user.UserService;
@@ -24,9 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -173,17 +169,7 @@ public class UserController {
         emailService.sendHTML(user.getEmail(), "forgetPassword", params, null);
     }
 
-    /**
-     * 注解@AuthenticationPrincipal在spring配置文件中加入了AuthenticationPrincipalArgumentResolver之后，
-     * 可以将实现了UserDetails接口的实体类作为controller的参数传入，而且可以直接写实际的子类类型
-     * @param jwtUser
-     * @return
-     */
-    @RequestMapping(value="/principles",method = RequestMethod.GET)
-    public String getPrinciples(@AuthenticationPrincipal JWTUser jwtUser){
-        return jwtUser.getAuthorities().toString();
-    }
-    
+        
     @RequestMapping(value = "/{id}/password", method = RequestMethod.PUT)
     @ApiOperation(value = "忘记密码后可以修改密码")
     public void resetPassword(@PathVariable("id") Long id, @RequestParam("forgetPasswordCode") @ApiParam(value = "验证码", required = true) String forgetPasswordCode, @RequestParam("password") @ApiParam(value = "新密码", required = true) String password) {
@@ -211,8 +197,6 @@ public class UserController {
     @ApiOperation(value = "分页查询用户信息", response = PageInfo.class, authorizations = {@Authorization("登录权限")})
     @ApiResponses(value = {@ApiResponse(code = 401, message = "未登录")})
     public PageInfo<UserDO> findAllUsers(@RequestParam("pageNum") @ApiParam(value = "页码，从1开始", defaultValue = "1") Integer pageNum, @RequestParam("pageSize") @ApiParam(value = "每页记录数", defaultValue = "5") Integer pageSize) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        log.info("Authentication:{}",authentication.getAuthorities());
         return service.findAll(pageNum, pageSize);
     }
 }

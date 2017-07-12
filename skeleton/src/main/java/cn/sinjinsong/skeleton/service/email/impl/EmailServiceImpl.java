@@ -5,6 +5,7 @@ import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 import cn.sinjinsong.skeleton.service.email.EmailService;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.io.FileSystemResource;
@@ -29,6 +30,7 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "spring.mail")
 @Getter
 @Setter
+@Slf4j
 public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender javaMailSender;

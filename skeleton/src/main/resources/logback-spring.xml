@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <logger name="org.springframework.web" level="INFO"/>
-    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
     <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
@@ -10,7 +8,7 @@
         </encoder>
     </appender>
 
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>log/SpringBootSkeleton.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxHistory>15</maxHistory>
@@ -24,29 +22,24 @@
         </encoder>
     </appender>
 
-    <appender name="asyncFileAppender" class="ch.qos.logback.classic.AsyncAppender">
-        <discardingThreshold>0</discardingThreshold>
-        <queueSize>500</queueSize>
-        <appender-ref ref="FILE"/>
-    </appender>
-
-
     <springProfile name="pro">
         <logger name="cn.sinjinsong" level="INFO" additivity="false">
-            <appender-ref ref="asyncFileAppender"/>
+            <appender-ref ref="fileAppender"/>
         </logger>
-    </springProfile>
-
-    <springProfile name="dev,test">
-        <logger name="cn.sinjinsong" level="INFO" additivity="false" >
+        <logger name="dao" level="DEBUG" additivity="false">
             <appender-ref ref="consoleAppender"/>
-            <appender-ref ref="asyncFileAppender"/>
+            <appender-ref ref="fileAppender"/>
         </logger>
     </springProfile>
-
-    <springProfile name="pro">
+    
+    <springProfile name="dev,test">
         <logger name="cn.sinjinsong" level="INFO" additivity="false">
-            <appender-ref ref="asyncFileAppender"/>
+            <appender-ref ref="consoleAppender"/>
+            <appender-ref ref="fileAppender"/>
+        </logger>
+        <logger name="dao" level="DEBUG" additivity="false">
+            <appender-ref ref="consoleAppender"/>
+            <appender-ref ref="fileAppender"/>
         </logger>
     </springProfile>
 

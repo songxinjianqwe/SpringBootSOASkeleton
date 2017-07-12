@@ -5,11 +5,13 @@ import cn.sinjinsong.common.enumeration.FileType;
 import cn.sinjinsong.common.exception.file.FileTypeNotSuppertedException;
 import cn.sinjinsong.common.util.FileUtil;
 import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
+import cn.sinjinsong.skeleton.security.domain.JWTUser;
 import cn.sinjinsong.skeleton.service.user.UserService;
 import io.swagger.annotations.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,7 +35,7 @@ public class FileController {
             @ApiResponse(code = 400, message = "文件格式不支持"),
             @ApiResponse(code = 400, message = "文件传输失败")
     })
-    public void uploadUserFile(@RequestParam("type") @ApiParam(value = "文件类型，仅支持image,file,audio,video", required = true) String fileType, @RequestParam("file") @ApiParam(value = "文件", required = true) MultipartFile file, HttpServletRequest request) {
+    public void uploadUserFile(@RequestParam("type") @ApiParam(value = "文件类型，仅支持image,file,audio,video", required = true) String fileType, @RequestParam("file") @ApiParam(value = "文件", required = true) MultipartFile file, HttpServletRequest request, @AuthenticationPrincipal JWTUser jwtUser) {
         FileType type = Enum.valueOf(FileType.class, StringUtils.upperCase(fileType));
         if (type == null) {
             throw new FileTypeNotSuppertedException(fileType);
@@ -42,7 +44,7 @@ public class FileController {
         //如果是上传用户的头像图片，那么将图片的相对路径保存数据库的用户记录中
         if (type == FileType.IMAGE) {
             UserDO user = new UserDO();
-            user.setId(Long.valueOf((String) request.getAttribute("id")));
+            user.setId(jwtUser.getId());
             user.setAvatar(relativePath);
             service.update(user);
         }

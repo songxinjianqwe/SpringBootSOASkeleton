@@ -1,6 +1,6 @@
 package cn.sinjinsong.skeleton.exception.handler;
 
-import cn.sinjinsong.common.aop.LoggingAspect;
+import cn.sinjinsong.skeleton.aop.LoggingAspect;
 import org.apache.log4j.Logger;
 import org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler;
 import org.springframework.stereotype.Component;

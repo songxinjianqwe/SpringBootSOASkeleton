@@ -18,6 +18,7 @@ spring:
     jackson:
         time-zone: GMT+8
         date-format: yyyy-MM-dd HH:mm:ss
+    #    default-property-inclusion: non_null    #忽略null字段
     #文件上传
     http:
       multipart: 
@@ -51,8 +52,11 @@ spring:
       mode: HTML5
       encoding: UTF-8
       content-type: text/html # ;charset=<encoding> is added
-      cache: true
-
+      cache: false
+    aop:
+      auto: true
+      proxy-target-class: true
+    
 ## Mybatis配置
 mybatis:
     mapperLocations: classpath:mapper/*.xml

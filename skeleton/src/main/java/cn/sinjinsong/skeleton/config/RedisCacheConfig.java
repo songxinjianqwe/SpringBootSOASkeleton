@@ -6,50 +6,52 @@
  */
 package cn.sinjinsong.skeleton.config;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.io.Serializable;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * SinjinSong
  */
 @Configuration
 @EnableCaching
+@ConfigurationProperties(prefix = "cache")
+@PropertySource("classpath:cache.properties")
+@Getter
+@Setter
 public class RedisCacheConfig extends CachingConfigurerSupport {
+    @Autowired
+    private JedisConnectionFactory factory;
+    private Integer expireTime;
+    private String name;
     
-    private volatile JedisConnectionFactory jedisConnectionFactory;
-    private volatile RedisTemplate<String, String> redisTemplate;
-    private volatile RedisCacheManager redisCacheManager;
-
-    public RedisCacheConfig() {
-    }
-
-    public RedisCacheConfig(JedisConnectionFactory jedisConnectionFactory, RedisTemplate<String, String> mRedisTemplate,
-                            RedisCacheManager mRedisCacheManager) {
-        this.jedisConnectionFactory = jedisConnectionFactory;
-        this.redisTemplate = mRedisTemplate;
-        this.redisCacheManager = mRedisCacheManager;
-    }
-
-    public JedisConnectionFactory redisConnectionFactory() {
-        return this.jedisConnectionFactory;
-    }
-    
-    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory cf) {
-        return this.redisTemplate;
-    }
-
+    @Bean
     public CacheManager cacheManager(RedisTemplate redisTemplate) {
-        return this.redisCacheManager;
+        RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
+        cacheManager.setDefaultExpiration(expireTime);
+        return cacheManager;
+    }
+    
+    @Bean
+    public RedisTemplate<String, Serializable> redisTemplate() {
+        RedisTemplate<String, Serializable> template = new RedisTemplate<>();
+        template.setConnectionFactory(factory);
+        return template;
     }
 
     @Bean

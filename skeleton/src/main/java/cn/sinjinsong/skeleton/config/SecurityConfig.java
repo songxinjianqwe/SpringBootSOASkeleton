@@ -95,6 +95,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/configuration/ui",
                         "/swagge‌​r-ui.html",
                         "/swagger-resources/configuration/security").permitAll()
+                //允许访问Druid监控
+                .antMatchers("/druid/**").permitAll()
                 //获取图片验证码
                 .antMatchers(HttpMethod.GET, "/captchas").permitAll()
                 //检查用户名是否重复

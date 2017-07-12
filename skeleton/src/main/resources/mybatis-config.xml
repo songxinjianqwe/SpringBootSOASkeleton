@@ -5,6 +5,8 @@
 <configuration>
 
     <settings>
+        <!--日志-->
+        <setting name="logPrefix" value="dao."/>
         <!--缓存 -->
         <setting name="cacheEnabled" value="false"/>
         <!--延迟加载-->

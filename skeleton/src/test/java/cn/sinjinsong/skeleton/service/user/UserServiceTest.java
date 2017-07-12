@@ -1,12 +1,16 @@
 package cn.sinjinsong.skeleton.service.user;
 
 import cn.sinjinsong.skeleton.BaseSpringTest;
+import cn.sinjinsong.common.client.HttpClientManager;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
+import cn.sinjinsong.skeleton.service.email.EmailService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * Created by SinjinSong on 2017/7/10.
@@ -21,11 +25,16 @@ public class UserServiceTest extends BaseSpringTest {
     private AuthenticationProperties authenticationProperties;
     @Autowired
     private EmailSubjectProperties properties;
-
+    @Autowired
+    private EmailService emailService;
+    @Autowired
+    private HttpClientManager httpClientManager;
+    
     @Test
     public void findByUsername() throws Exception {
 //        UserDO user = userService.findByUsername("admin");
 //        System.out.println(user);
+//        emailService.sendHTML("songxinjianzx@126.com",null,null,null);
 //        log.info("user:{} ",user);
 //        String message = ms.getMessage("i18n.TokenStateInvalid", null, Locale.getDefault());
 //        log.info("message:{}",message);
@@ -35,11 +44,18 @@ public class UserServiceTest extends BaseSpringTest {
 //        log.info("{}",authenticationProperties.getActivationCodeExpireTime());
 //        log.info("{}",authenticationProperties.getForgetNameCodeExpireTime());
 //        log.info("{}",authenticationProperties.getSecretKey());
-        log.info("{}",properties.getProperty("activation"));
+//        log.info("{}",properties.getProperty("activation"));
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        httpClientManager.copyStream("http://www.baidu.com",baos);
+        String s = baos.toString();
+        log.info("{}",s);
+        baos.close();
     }
+    
 
     @Test
     public void findByPhone() throws Exception {
+        
     }
 
     @Test

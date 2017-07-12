@@ -31,8 +31,23 @@
 ## 所有的html都放在templates下面，只有index.html能直接访问，其他均不可，必须通过Controller的转发
 ## 静态资源都放在static下面，访问时Spring Security会检查URL，根据URL进行拦截。如果通过，那么会交给ViewResolver，添加前面的/static（无需配置，SpringBoot自动完成），得到最终的真实路径
 
-## 访问swagger
+## Mybatis打印SQL：http://www.cnblogs.com/lixuwu/p/6323739.html
 
+## 访问Druid监控：http://localhost:8080/druid
+
+
+## 和时间有关的：POJO属性上加 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") @JsonSerialize(using = LocalDateTimeSerializer.class)   @JsonDeserialize(using = LocalDateDeserializer.class)
+                如果是controller的方法，加 @DateTimeFormat(pattern = Const.DATE_TIME_PATTERN)   (yyyy-MM-dd HH:mm:ss)
+
+## spring-devtools热部署：
+- 前提：把Idea的自动编译打开
+- 修改类-->保存：应用会重启
+- 修改配置文件-->保存：应用会重启
+- 修改页面-->保存：应用不会重启，但会重新加载，页面会刷新（原理是将spring.thymeleaf.cache设为false）
+
+
+
+## 功能们：
 ### 用户模块
     - 获取图片验证码
     - 登录:解决重复登录问题
