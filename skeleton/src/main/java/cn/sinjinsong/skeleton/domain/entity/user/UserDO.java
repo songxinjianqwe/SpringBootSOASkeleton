@@ -2,10 +2,6 @@ package cn.sinjinsong.skeleton.domain.entity.user;
 
 import cn.sinjinsong.common.validator.time.Past;
 import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -82,8 +78,6 @@ public class UserDO implements Serializable {
      * @mbggenerated
      */
     @Past
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate birthday;
 
     /**
@@ -92,8 +86,6 @@ public class UserDO implements Serializable {
      *
      * @mbggenerated
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime regTime;
 
     /**

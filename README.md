@@ -39,10 +39,6 @@
 
 ## 访问Druid监控：http://localhost:8080/druid
 
-
-## 和时间有关的：POJO属性上加 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") @JsonSerialize(using = LocalDateTimeSerializer.class)   @JsonDeserialize(using = LocalDateDeserializer.class)
-                如果是controller的方法，加 @DateTimeFormat(pattern = Const.DATE_TIME_PATTERN)   (yyyy-MM-dd HH:mm:ss)
-
 ## spring-devtools热部署：
 - 前提：把Idea的自动编译打开
 - 修改类-->保存：应用会重启
@@ -52,22 +48,26 @@
 ## @Bean 
 ### 可以指定name，如果不指定那么使用方法名作为name 
 ### 有一个initMethod和destroyMethod两个属性，值为该Bean的方法名 ；当然也可以直接在方法上使用注解@PostConstruct&@PreDestroy
+
 ## 组合注解
 
 ## @EnableAsync @EnableTransactionManagement @EnableCaching @EnableScheduling @EnableWebSecurity @EnableSwagger2
-## @EnableTransactionManagement 可以不加，自动配置
+
+## @EnableTransactionManagement | @EnableWebSecurity  可以不加，自动配置
 ## @Conditional
 
+## 注册Servlet、Filter、Listener 
+
+## ApplicationEvent Spring 提供的Observer模型骨架
 
 ## SpringMVC 拦截器 实现HandlerInterceptor接口或继承HandlerInterceptorAdaptor类，然后将其注册为一个Bean，并在registry(继承了WebMvcConfigurerAdapter的配置类)中调用addInterceptor
 ## 如果想要自己完全控制WebMVC，就需要在@Configuration注解的配置类上增加@EnableWebMvc；否则会使用自动配置。一般不使用@EnableWebMvc
 
-## TODO:MockMvc WebSocket RabbitMQ
+## TODO:WebSocket ,RabbitMQ, Spring Batch,Docker
 
 ## @SpringBootApplication是一个组合注解，组合了@EnableAutoConfiguration，根据类路径中的jar包依赖为当前项目进行自动配置
 
-
-## 注册Servlet、Filter、Listener 
+## Jaskson 反序列化  mapper.readValue(content, new TypeReference<PageInfo<MailDO>>() {});
 
 
 ## SSL配置

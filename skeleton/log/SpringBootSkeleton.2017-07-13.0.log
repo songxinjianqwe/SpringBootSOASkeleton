@@ -144,3 +144,888 @@ java.lang.RuntimeException: 测试
 	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
 	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
 	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+2017-07-13 14:03:40.812 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 6000 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:03:40.815 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:04:11.132 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 31.792 seconds (JVM running for 33.359)
+2017-07-13 14:04:11.562 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:04:11.597 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:04:11.804 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:04:12.069 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:04:12.104 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:04:12.107 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:04:12.110 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:04:12.114 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:04:12.116 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:04:12.120 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.122 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:04:12.122 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:04:12.125 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.126 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.128 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:04:12.139 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.143 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.144 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:04:12.146 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.147 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:04:12.149 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:04:12.152 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.153 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.154 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:04:12.157 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.159 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.160 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:04:12.163 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.164 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.165 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:04:12.167 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.168 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:04:12.182 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:04:12.188 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:04:12.196 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:04:12.197 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:04:12.197 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:04:12.388 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:04:12.390 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:04:12.391 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:04:12.394 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:04:12.395 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:04:12.396 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:04:12.398 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:04:12.399 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:04:12.402 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.403 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:04:12.404 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:04:12.407 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.409 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.410 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:04:12.413 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.414 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.415 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:04:12.419 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.422 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:04:12.423 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:04:12.425 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.427 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.428 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:04:12.430 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.431 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.432 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:04:12.434 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.435 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:04:12.437 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:04:12.439 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:04:12.440 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:04:12.441 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:04:12.443 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:04:12.447 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:04:12.448 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:08:35.475 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 11224 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:08:35.477 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:09:04.613 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 30.886 seconds (JVM running for 32.196)
+2017-07-13 14:09:04.905 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:09:04.923 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:09:05.102 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:09:05.336 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:09:05.363 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:09:05.365 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:09:05.368 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:09:05.372 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:09:05.374 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:09:05.377 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.379 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:09:05.380 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:09:05.383 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.384 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.385 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:09:05.396 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.399 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.400 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:09:05.403 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.404 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:09:05.405 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:09:05.408 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.409 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.410 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:09:05.412 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.414 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.415 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:09:05.418 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.419 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.420 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:09:05.422 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.423 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:09:05.434 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:09:05.439 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:09:05.443 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:09:05.444 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:09:05.444 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:09:05.627 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:09:05.629 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:09:05.630 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:09:05.637 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:09:05.638 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:09:05.639 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:09:05.642 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:09:05.643 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:09:05.645 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.646 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:09:05.647 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:09:05.652 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.653 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.655 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:09:05.658 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.660 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.661 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:09:05.665 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.667 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:09:05.668 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:09:05.671 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.672 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.673 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:09:05.674 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.676 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.677 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:09:05.679 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.681 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:09:05.683 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:09:05.685 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:09:05.686 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:09:05.687 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:09:05.688 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:09:05.689 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:09:05.690 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:10:28.577 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 10836 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:10:28.579 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:11:10.127 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 43.155 seconds (JVM running for 44.9)
+2017-07-13 14:11:10.386 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:11:10.404 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:11:10.583 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:11:10.766 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:11:10.800 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:11:10.802 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:11:10.804 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:11:10.809 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:11:10.810 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:11:10.815 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.817 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:11:10.818 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:11:10.821 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.823 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:10.825 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:11:10.834 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.836 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:10.837 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:11:10.839 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.840 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:11:10.841 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:11:10.844 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.845 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:10.846 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:11:10.848 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.851 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:10.852 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:11:10.854 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.856 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:10.857 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:11:10.859 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:10.860 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:11:10.872 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:11:10.878 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:11:10.881 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:11:10.881 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:11:10.882 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:11:11.121 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:11:11.125 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:11:11.126 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:11:11.129 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:11:11.131 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:11:11.132 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:11:11.134 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:11:11.135 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:11:11.137 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.138 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:11:11.139 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:11:11.141 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.143 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:11.145 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:11:11.147 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.149 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:11.149 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:11:11.153 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.155 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:11:11.157 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:11:11.163 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.165 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:11.166 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:11:11.168 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.174 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:11.176 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:11:11.179 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.182 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:11:11.183 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:11:11.185 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:11:11.186 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:11:11.187 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:11:11.188 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:11:11.190 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:11:11.192 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:12:24.426 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 9852 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:12:24.428 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:13:07.472 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 45.12 seconds (JVM running for 46.752)
+2017-07-13 14:13:08.023 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:13:08.091 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:13:08.323 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:13:08.570 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:13:08.601 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:13:08.603 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:13:08.606 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:13:08.611 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:13:08.613 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:13:08.617 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.618 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:13:08.619 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:13:08.622 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.623 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.625 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:13:08.634 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.637 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.637 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:13:08.639 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.640 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:13:08.641 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:13:08.643 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.644 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.645 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:13:08.647 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.649 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.650 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:13:08.652 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.654 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.655 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:13:08.657 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.658 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:13:08.671 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:13:08.678 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:13:08.680 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:13:08.681 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:13:08.682 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:13:08.913 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:13:08.916 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:13:08.917 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:13:08.919 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:13:08.920 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:13:08.920 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:13:08.922 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:13:08.924 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:13:08.927 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.929 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:13:08.930 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:13:08.932 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.934 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.936 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:13:08.938 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.940 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.941 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:13:08.945 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.947 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:13:08.948 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:13:08.950 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.953 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.954 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:13:08.956 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.958 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.958 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:13:08.960 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.962 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:13:08.962 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:13:08.965 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:13:08.966 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:13:08.967 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:13:08.968 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:13:08.969 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:13:08.970 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:16:14.784 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 7128 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:16:14.787 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:16:47.863 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 34.726 seconds (JVM running for 36.205)
+2017-07-13 14:16:48.098 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:16:48.118 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:16:48.281 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:16:48.514 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:16:48.540 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:16:48.543 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:16:48.545 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:16:48.550 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:16:48.551 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:16:48.555 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.556 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:16:48.557 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:16:48.560 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.562 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:16:48.563 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:16:48.572 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.577 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:16:48.578 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:16:48.580 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.581 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:16:48.583 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:16:48.586 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.587 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:16:48.588 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:16:48.591 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.593 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:16:48.594 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:16:48.596 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.597 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:16:48.598 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:16:48.600 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:16:48.601 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:16:48.612 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:16:48.617 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:16:48.621 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:16:48.622 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:16:48.623 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:18:45.854 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 5852 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:18:45.858 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:19:18.760 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 34.964 seconds (JVM running for 36.61)
+2017-07-13 14:19:19.037 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:19:19.054 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:19:19.240 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:19:19.490 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:19:19.525 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:19:19.527 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:19:19.530 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:19:19.535 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:19:19.537 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:19:19.540 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.542 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:19:19.543 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:19:19.545 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.547 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.548 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:19:19.557 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.560 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.561 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:19:19.563 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.564 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:19:19.565 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:19:19.568 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.569 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.570 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:19:19.573 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.575 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.575 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:19:19.577 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.579 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.580 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:19:19.582 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.583 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:19:19.596 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:19:19.602 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:19:19.605 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:19:19.607 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:19:19.608 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:19:19.845 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:19:19.847 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:19:19.849 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:19:19.851 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:19:19.852 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:19:19.853 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:19:19.855 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:19:19.856 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:19:19.860 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.861 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:19:19.862 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:19:19.865 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.866 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.869 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:19:19.872 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.874 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.875 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:19:19.878 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.880 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:19:19.881 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:19:19.883 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.885 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.886 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:19:19.888 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.889 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.890 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:19:19.892 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.893 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:19:19.894 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:19:19.896 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:19:19.896 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:19:19.898 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:19:19.898 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:19:19.900 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:19:19.901 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:45:50.227 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 8740 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:45:50.231 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:46:16.237 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 27.773 seconds (JVM running for 29.338)
+2017-07-13 14:46:16.537 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 14:46:16.555 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:46:16.746 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:46:17.023 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:46:17.054 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:46:17.056 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:46:17.059 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:46:17.063 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:46:17.065 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:46:17.069 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.071 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:46:17.072 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:46:17.075 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.076 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.077 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:46:17.088 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.091 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.092 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:46:17.094 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.096 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:46:17.096 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:46:17.099 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.102 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.103 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:46:17.106 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.109 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.109 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:46:17.112 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.113 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.114 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:46:17.116 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.117 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:46:17.130 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:46:17.138 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:46:17.141 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:46:17.143 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:46:17.144 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:46:17.398 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 14:46:17.400 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 14:46:17.402 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:46:17.404 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 14:46:17.405 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 14:46:17.406 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 14:46:17.409 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:46:17.410 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:46:17.413 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.415 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:46:17.415 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 14:46:17.417 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.419 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.421 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 14:46:17.424 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.426 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.427 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:46:17.431 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.433 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 14:46:17.434 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 14:46:17.437 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.439 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.440 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 14:46:17.442 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.444 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.444 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 14:46:17.447 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.449 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 14:46:17.450 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 14:46:17.453 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 14:46:17.454 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 14:46:17.458 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 14:46:17.459 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 14:46:17.460 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 14:46:17.462 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 14:52:58.730 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 48] - Starting UserServiceTest on LAPTOP-0E5JL9PN with PID 1676 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:52:58.732 INFO  [main] c.s.s.service.user.UserServiceTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 14:53:25.621 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 57] - Started UserServiceTest in 28.336 seconds (JVM running for 29.586)
+2017-07-13 14:59:46.398 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 48] - Starting UserServiceTest on LAPTOP-0E5JL9PN with PID 5132 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 14:59:46.401 INFO  [main] c.s.s.service.user.UserServiceTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:00:16.042 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 57] - Started UserServiceTest in 31.441 seconds (JVM running for 33.078)
+2017-07-13 15:00:16.234 INFO  [main] c.s.s.service.user.UserServiceTest [UserServiceTest.java : 43] - UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=null, regTime=null, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg)
+2017-07-13 15:01:04.169 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 48] - Starting UserServiceTest on LAPTOP-0E5JL9PN with PID 4232 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:01:04.171 INFO  [main] c.s.s.service.user.UserServiceTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:01:33.212 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 57] - Started UserServiceTest in 30.656 seconds (JVM running for 32.044)
+2017-07-13 15:02:04.264 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 48] - Starting UserServiceTest on LAPTOP-0E5JL9PN with PID 3856 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:02:04.267 INFO  [main] c.s.s.service.user.UserServiceTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:02:30.570 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 57] - Started UserServiceTest in 28.176 seconds (JVM running for 29.584)
+2017-07-13 15:04:08.721 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 48] - Starting UserServiceTest on LAPTOP-0E5JL9PN with PID 1400 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:04:08.724 INFO  [main] c.s.s.service.user.UserServiceTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:04:37.869 INFO  [main] c.s.s.service.user.UserServiceTest [StartupInfoLogger.java : 57] - Started UserServiceTest in 30.579 seconds (JVM running for 31.959)
+2017-07-13 15:04:38.101 INFO  [main] c.s.s.service.user.UserServiceTest [UserServiceTest.java : 43] - UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg)
+2017-07-13 15:05:09.155 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 9936 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:05:09.158 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:05:38.716 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 31.096 seconds (JVM running for 32.507)
+2017-07-13 15:05:38.955 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 15:05:38.972 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:05:39.128 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:05:39.341 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:05:39.371 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:05:39.373 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:05:39.376 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:05:39.380 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:05:39.382 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:05:39.385 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.387 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:05:39.388 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:05:39.391 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.392 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.393 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:05:39.402 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.404 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.405 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:05:39.407 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.409 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:05:39.410 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:05:39.413 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.414 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.415 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:05:39.417 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.419 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.420 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:05:39.423 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.424 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.425 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:05:39.427 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.428 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:05:39.438 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:05:39.444 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:05:39.447 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:05:39.448 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:05:39.449 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:05:39.492 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:05:39.494 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:05:39.496 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:05:39.497 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:05:39.498 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:05:39.500 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:05:39.502 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:05:39.503 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:05:39.505 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.506 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:05:39.507 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:05:39.509 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.511 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.512 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:05:39.514 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.516 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.516 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:05:39.519 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.521 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:05:39.522 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:05:39.524 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.526 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.527 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:05:39.529 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.531 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.531 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:05:39.533 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.534 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:05:39.535 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:05:39.537 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:05:39.538 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:05:39.540 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:05:39.540 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:05:39.542 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:05:39.543 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:06:17.406 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 5852 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:06:17.410 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:06:44.348 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 28.519 seconds (JVM running for 30.086)
+2017-07-13 15:06:44.628 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 15:06:44.647 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:06:44.864 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:06:45.133 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:06:45.169 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:06:45.173 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:06:45.175 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:06:45.180 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:06:45.182 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:06:45.185 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.186 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:06:45.188 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:06:45.191 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.192 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.194 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:06:45.205 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.210 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.212 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:06:45.214 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.215 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:06:45.216 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:06:45.218 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.219 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.221 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:06:45.223 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.225 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.226 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:06:45.228 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.229 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.231 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:06:45.233 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.234 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:06:45.247 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:06:45.253 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:06:45.257 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:06:45.258 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:06:45.259 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:06:45.307 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:06:45.311 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:06:45.312 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:06:45.314 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:06:45.315 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:06:45.315 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:06:45.317 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:06:45.318 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:06:45.320 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.321 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:06:45.322 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:06:45.324 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.326 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.327 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:06:45.330 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.331 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.332 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:06:45.335 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.337 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:06:45.337 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:06:45.340 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.342 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.343 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:06:45.345 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.347 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.349 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:06:45.352 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.353 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:06:45.354 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:06:45.357 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:06:45.358 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:06:45.360 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:06:45.360 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:06:45.362 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:06:45.362 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:08:25.696 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 3228 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:08:25.698 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:08:57.179 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 33.136 seconds (JVM running for 34.57)
+2017-07-13 15:08:57.417 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 15:08:57.440 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:08:57.634 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:08:57.796 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:08:57.820 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:08:57.823 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:08:57.826 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:08:57.830 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:08:57.832 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:08:57.835 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.837 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:08:57.838 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:08:57.841 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.842 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.843 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:08:57.852 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.854 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.855 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:08:57.857 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.858 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:08:57.860 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:08:57.862 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.863 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.864 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:08:57.866 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.869 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.870 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:08:57.872 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.874 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.875 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:08:57.876 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.877 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:08:57.887 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:08:57.891 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:08:57.893 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:08:57.894 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:08:57.895 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:08:57.931 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:08:57.933 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:08:57.935 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:08:57.936 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:08:57.937 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:08:57.938 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:08:57.940 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:08:57.941 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:08:57.943 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.944 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:08:57.944 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:08:57.946 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.947 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.948 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:08:57.950 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.951 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.951 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:08:57.954 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.955 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:08:57.955 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:08:57.957 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.959 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.960 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:08:57.961 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.962 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.963 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:08:57.964 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.965 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:08:57.966 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:08:57.967 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:08:57.968 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:08:57.969 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:08:57.970 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:08:57.972 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:08:57.972 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:08:58.028 INFO  [main] c.s.s.c.mail.MailControllerTest [MailControllerTest.java : 60] - [MailDO(id=1, sender=UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=NOT_VIEWED, text=MailTextDO(id=1, sendTime=2017-05-04T16:18:08, mailText=hehe)), MailDO(id=15, sender=UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=NOT_VIEWED, text=MailTextDO(id=14, sendTime=2017-05-09T19:22:09, mailText=HelloWorld)), MailDO(id=19, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=NOT_VIEWED, text=MailTextDO(id=15, sendTime=2017-05-09T19:40:05, mailText=HelloWorld)), MailDO(id=20, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=NOT_VIEWED, text=MailTextDO(id=16, sendTime=2017-07-12T13:34:36, mailText=HelloWorld)), MailDO(id=21, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=NOT_VIEWED, text=MailTextDO(id=17, sendTime=2017-07-12T16:27:25, mailText=haha))]
+2017-07-13 15:13:50.494 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 1688 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:13:50.496 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:14:16.248 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 27.269 seconds (JVM running for 28.719)
+2017-07-13 15:14:16.513 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 15:14:16.535 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:14:16.714 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:14:16.982 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:14:17.059 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:14:17.062 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:14:17.065 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:14:17.071 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:14:17.072 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:14:17.076 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.077 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:14:17.079 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:14:17.082 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.084 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.086 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:14:17.095 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.099 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.101 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:14:17.104 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.106 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:14:17.107 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:14:17.111 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.112 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.113 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:14:17.115 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.118 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.119 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:14:17.122 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.123 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.124 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:14:17.126 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.127 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:14:17.142 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:14:17.147 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:14:17.152 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:14:17.153 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:14:17.154 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:14:17.205 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:14:17.210 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:14:17.212 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:14:17.214 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:14:17.215 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:14:17.256 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:14:17.265 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:14:17.266 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:14:17.269 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.270 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:14:17.271 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:14:17.273 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.274 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.276 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:14:17.280 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.282 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.283 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:14:17.288 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.290 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:14:17.291 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:14:17.294 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.297 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.297 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:14:17.301 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.302 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.303 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:14:17.305 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.306 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:14:17.307 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:14:17.310 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:14:17.311 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:14:17.312 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:14:17.312 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:14:17.314 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:14:17.315 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:14:17.405 INFO  [main] c.s.s.c.mail.MailControllerTest [MailControllerTest.java : 60] - result:[MailDO(id=1, sender=UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=1, sendTime=2017-05-04T16:18:08, mailText=hehe)), MailDO(id=15, sender=UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=14, sendTime=2017-05-09T19:22:09, mailText=HelloWorld)), MailDO(id=19, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=15, sendTime=2017-05-09T19:40:05, mailText=HelloWorld)), MailDO(id=20, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=16, sendTime=2017-07-12T13:34:36, mailText=HelloWorld)), MailDO(id=21, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=17, sendTime=2017-07-12T16:27:25, mailText=haha))]
+2017-07-13 15:19:57.590 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 48] - Starting MailControllerTest on LAPTOP-0E5JL9PN with PID 4640 (started by songx in D:\idea\SpringBootSkeleton\skeleton)
+2017-07-13 15:19:57.592 INFO  [main] c.s.s.c.mail.MailControllerTest [SpringApplication.java : 597] - The following profiles are active: dev
+2017-07-13 15:20:23.993 INFO  [main] c.s.s.c.mail.MailControllerTest [StartupInfoLogger.java : 57] - Started MailControllerTest in 28.05 seconds (JVM running for 29.568)
+2017-07-13 15:20:24.269 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] begins with Parameters: [2, receiver, 1, 5, all]
+2017-07-13 15:20:24.288 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:20:24.450 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:20:24.677 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:20:24.704 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:20:24.707 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:20:24.709 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:20:24.714 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:20:24.716 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:20:24.720 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.721 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:20:24.722 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:20:24.725 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.726 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.727 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:20:24.737 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.739 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.740 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:20:24.743 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.744 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:20:24.745 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:20:24.748 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.749 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.750 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:20:24.752 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.755 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.756 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:20:24.758 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.760 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.761 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:20:24.762 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.763 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:20:24.775 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:20:24.781 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:20:24.783 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:20:24.784 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:20:24.785 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.controller.mail.MailController.findMails(Long,String,Integer,Integer,String) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:20:24.829 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 22] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] begins with Parameters: [2, 1, 5, ALL]
+2017-07-13 15:20:24.832 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==>  Preparing: SELECT count(0) FROM mail WHERE receiver = ? 
+2017-07-13 15:20:24.833 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:20:24.834 DEBUG [main] d.c.s.s.d.m.M.findByReceiver_COUNT [BaseJdbcLogger.java : 159] - <==      Total: 1
+2017-07-13 15:20:24.836 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==>  Preparing: select id, sender ,receiver , mail_status,text from mail where receiver = ? LIMIT 5 
+2017-07-13 15:20:24.837 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - ==> Parameters: 2(Long)
+2017-07-13 15:20:24.839 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:20:24.840 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:20:24.842 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.843 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:20:24.844 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 2(Long)
+2017-07-13 15:20:24.846 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.847 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.849 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 1(Long)
+2017-07-13 15:20:24.851 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.853 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.854 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:20:24.858 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.859 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, username, nickname, sex, birthday, reg_time,avatar from user where id = ? 
+2017-07-13 15:20:24.860 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - ====> Parameters: 14(Long)
+2017-07-13 15:20:24.862 DEBUG [main] d.c.s.s.d.u.U.findBriefInfoById [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.864 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.865 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 15(Long)
+2017-07-13 15:20:24.866 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.868 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.869 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 16(Long)
+2017-07-13 15:20:24.870 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.871 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====>  Preparing: select id, send_time , mail_text from mail_text where id = ? 
+2017-07-13 15:20:24.872 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - ====> Parameters: 17(Long)
+2017-07-13 15:20:24.874 DEBUG [main] d.c.s.s.d.m.M.selectByPrimaryKey [BaseJdbcLogger.java : 159] - <====      Total: 1
+2017-07-13 15:20:24.875 DEBUG [main] d.c.s.s.d.m.M.findByReceiver [BaseJdbcLogger.java : 159] - <==      Total: 5
+2017-07-13 15:20:24.877 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==>  Preparing: update mail set mail_status = ? where id in ( ? , ? , ? , ? , ? ) 
+2017-07-13 15:20:24.877 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - ==> Parameters: 1(Integer), 1(Long), 15(Long), 19(Long), 20(Long), 21(Long)
+2017-07-13 15:20:24.911 DEBUG [main] d.c.s.s.d.m.M.updateStatus [BaseJdbcLogger.java : 159] - <==    Updates: 5
+2017-07-13 15:20:24.914 INFO  [main] c.s.skeleton.aop.LoggingAspect [LoggingAspect.java : 27] - The method [ PageInfo cn.sinjinsong.skeleton.service.mail.impl.MailServiceImpl.findByReceiver(Long,int,int,MailStatus) ] ends with Result: PageInfo{pageNum=1, pageSize=5, size=5, startRow=1, endRow=5, total=5, pages=1, list=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=5, pages=1, reasonable=true, pageSizeZero=true}, prePage=0, nextPage=0, isFirstPage=true, isLastPage=true, hasPreviousPage=false, hasNextPage=false, navigatePages=8, navigateFirstPage1, navigateLastPage1, navigatepageNums=[1]}
+2017-07-13 15:20:25.022 INFO  [main] c.s.s.c.mail.MailControllerTest [MailControllerTest.java : 60] - result:[MailDO(id=1, sender=UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=1, sendTime=2017-05-04T16:18:08, mailText=hehe)), MailDO(id=15, sender=UserDO(id=1, username=admin, password=null, nickname=orange's cat, realName=null, sex=M, birthday=1996-12-26, regTime=2017-04-27T19:35:29, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\5\4\1493868411078_cat.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=14, sendTime=2017-05-09T19:22:09, mailText=HelloWorld)), MailDO(id=19, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=15, sendTime=2017-05-09T19:40:05, mailText=HelloWorld)), MailDO(id=20, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=16, sendTime=2017-07-12T13:34:36, mailText=HelloWorld)), MailDO(id=21, sender=UserDO(id=14, username=user1, password=null, nickname=user1, realName=null, sex=M, birthday=null, regTime=2017-05-05T23:47:46, email=null, phone=null, roles=null, userStatus=null, avatar=\WEB-INF\uploads\user\image\2017\7\12\1499836795784_1496205207202.jpeg), receiver=UserDO(id=2, username=admin2, password=null, nickname=admin2, realName=null, sex=M, birthday=1995-12-10, regTime=2017-04-28T09:03:38, email=null, phone=null, roles=null, userStatus=null, avatar=null), mailStatus=VIEWED, text=MailTextDO(id=17, sendTime=2017-07-12T16:27:25, mailText=haha))]

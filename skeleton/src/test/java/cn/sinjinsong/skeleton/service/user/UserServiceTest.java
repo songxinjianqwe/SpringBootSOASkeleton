@@ -2,10 +2,10 @@ package cn.sinjinsong.skeleton.service.user;
 
 import cn.sinjinsong.common.client.HttpClientManager;
 import cn.sinjinsong.skeleton.BaseSpringTest;
-import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 import cn.sinjinsong.skeleton.service.email.EmailService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +28,18 @@ public class UserServiceTest extends BaseSpringTest {
     private EmailService emailService;
     @Autowired
     private HttpClientManager httpClientManager;
+    @Autowired
+    private ObjectMapper mapper;
     
     @Test
     public void findByUsername() throws Exception {
-        UserDO user = userService.findByUsername("admin");
-        System.out.println(user);
-        user.setNickname("哒哒哒");
-        userService.update(user);
+//        UserDO user = userService.findByUsername("admin");
+//        System.out.println(user);
+//        user.setNickname("哒哒哒");
+//        userService.update(user);
+//    String user = "{\"id\":1,\"username\":\"admin\",\"password\":null,\"nickname\":\"orange's cat\",\"realName\":null,\"sex\":\"M\",\"birthday\":\"1996-12-26\",\"regTime\":\"2017-04-27 19:35:29\",\"email\":null,\"phone\":null,\"roles\":null,\"userStatus\":null,\"avatar\":\"\\\\WEB-INF\\\\uploads\\\\user\\\\image\\\\2017\\\\5\\\\4\\\\1493868411078_cat.jpeg\"}";
+//        UserDO userDO = mapper.readValue(user, UserDO.class);
+//        log.info("{}",userDO);
 //        emailService.sendHTML("songxinjianzx@126.com",null,null,null);
 //        log.info("user:{} ",user);
 //        String message = ms.getMessage("i18n.TokenStateInvalid", null, Locale.getDefault());
