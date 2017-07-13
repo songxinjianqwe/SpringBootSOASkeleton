@@ -17,18 +17,14 @@ spring:
         poolPreparedStatements: true
         maxPoolPreparedStatementPerConnectionSize: 20
     
-#    data:
-#        elasticsearch: 
-#            cluster-name: #默认为elasticsearch
-#            cluster-nodes: 127.0.0.1:20000 #配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode
-#            local: false
-#            repositories:
-#                enable: true
-#            properties:
-#                path:
-#                  logs: ./elasticsearch/log #elasticsearch日志存储目录
-#                  data: ./elasticsearch/data #elasticsearch数据存储目录
-    
+    data:
+        elasticsearch: 
+            cluster-name: elasticsearch 
+            #配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode 默认 9300 是 Java 客户端的端口
+            cluster-nodes: 127.0.0.1:9300 
+            local: false
+            repositories:
+                enable: true
     redis:
     # Redis数据库索引（默认为0）
       database: 0  

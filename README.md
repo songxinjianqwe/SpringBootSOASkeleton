@@ -29,6 +29,7 @@
 - WebSocket（待整合）
 - RabbitMQ（待整合）
 - OAUTH（待整合）
+- ElasticSearch（待整合）
 
 # 功能们：
 ## 用户模块
@@ -137,4 +138,29 @@
          ```
     3.  设置HTTP转向HTTPS   ->HTTPSConfig
 
+
+## ElasticSearch 学习
+### application.properties
+在实体类上加入
+@Document
+(indexName="article_index", //索引库的名称，个人建议以项目的名称命名（相当于一个Database）
+ indexName 配置必须是全部小写，不然会出异常。
+type="article", //类型，个人建议以实体的名称命名（相当于一张表）
+shards=5, //默认分区数
+replicas=1, //每个分区默认的备份数
+indexStoreType="fs", //索引文件存储类型
+refreshInterval="-1" //刷新间隔
+)
+在需要建立索引的类上加上@Document注解，即表明这个实体需要进行索引。默认情况下这个实体中所有的属性都会被建立索引、并且分词。
+在主键上加入@Id
+我们通过@Field注解来进行详细的指定。
+@Field
+(format=DateFormat.date_time,  //default DateFormat.none;
+index=FieldIndex.no, //默认情况下分词
+store=true, //默认情况下不存储原文
+type=FieldType.Object) //自动检测属性的类型
+private Date postTime;
+
+ 
+ 
 
