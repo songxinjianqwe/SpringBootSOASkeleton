@@ -19,13 +19,17 @@
         调用getAuthentication然后调用getPrinciple可以得到之前听过UserDetailsService查询出的UserDetails
    - 在Controller中使用@PreAuthorize等注解需要在spring-web配置文件中扫描security包下的类  
 
-## 引用application.properties中的属性的方式：@ConfigurationProperties(prefix = "spring.mail") + @Component + setter + getter
+## 引用application.properties中的属性的方式：@ConfigurationProperties(prefix = "spring.mail") + @Component + setter + getter  
 
 ## 引用其他自定义配置文件中的属性的方式：
+### 方式1:
      - @Component
      - @ConfigurationProperties(prefix = "auth")
      - @PropertySource("classpath:auth.properties")
      - setter & getter 
+### 使用@Value不太好，因为要自己写名字
+
+
 ## 所以写静态资源位置的时候，不要带上映射的目录名（如/static/，/public/ ，/resources/，/META-INF/resources/）！
 
 ## 所有的html都放在templates下面，只有index.html能直接访问，其他均不可，必须通过Controller的转发
@@ -45,7 +49,44 @@
 - 修改配置文件-->保存：应用会重启
 - 修改页面-->保存：应用不会重启，但会重新加载，页面会刷新（原理是将spring.thymeleaf.cache设为false）
 
+## @Bean 
+### 可以指定name，如果不指定那么使用方法名作为name 
+### 有一个initMethod和destroyMethod两个属性，值为该Bean的方法名 ；当然也可以直接在方法上使用注解@PostConstruct&@PreDestroy
+## 组合注解
 
+## @EnableAsync @EnableTransactionManagement @EnableCaching @EnableScheduling @EnableWebSecurity @EnableSwagger2
+## @EnableTransactionManagement 可以不加，自动配置
+## @Conditional
+
+
+## SpringMVC 拦截器 实现HandlerInterceptor接口或继承HandlerInterceptorAdaptor类，然后将其注册为一个Bean，并在registry(继承了WebMvcConfigurerAdapter的配置类)中调用addInterceptor
+## 如果想要自己完全控制WebMVC，就需要在@Configuration注解的配置类上增加@EnableWebMvc；否则会使用自动配置。一般不使用@EnableWebMvc
+
+## TODO:MockMvc WebSocket RabbitMQ
+
+## @SpringBootApplication是一个组合注解，组合了@EnableAutoConfiguration，根据类路径中的jar包依赖为当前项目进行自动配置
+
+
+## 注册Servlet、Filter、Listener 
+
+
+## SSL配置
+1、生成一个证书 .keystore
+2、把该证书复制到项目根目录(父项目，不是子模块)，然后在application.properties中添加如下配置
+
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8443
+    ssl:
+      key-store: .keystore
+      key-store-password: 130119
+      key-store-type: JKS
+      key-alias: tomcat
+3、 设置HTTP转向HTTPS
+     HTTPSConfig
 
 ## 功能们：
 ### 用户模块

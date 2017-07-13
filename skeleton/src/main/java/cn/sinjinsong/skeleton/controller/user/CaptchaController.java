@@ -3,16 +3,15 @@ package cn.sinjinsong.skeleton.controller.user;
 import cn.sinjinsong.common.domain.Captcha;
 import cn.sinjinsong.common.util.CaptchaUtil;
 import cn.sinjinsong.common.util.UUIDUtil;
+import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -21,9 +20,8 @@ import java.io.OutputStream;
 /**
  * Created by SinjinSong on 2017/4/27.
  */
-@CrossOrigin
+@BaseRESTController
 @RequestMapping("/captchas")
-@RestController
 @Api(value = "captchas", description = "图片验证码")
 @Slf4j
 public class CaptchaController {

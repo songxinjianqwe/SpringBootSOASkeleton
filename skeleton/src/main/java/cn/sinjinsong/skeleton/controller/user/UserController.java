@@ -4,6 +4,7 @@ import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.FileUtil;
 import cn.sinjinsong.common.util.SpringContextUtil;
 import cn.sinjinsong.common.util.UUIDUtil;
+import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.controller.user.handler.QueryUserHandler;
 import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
@@ -35,9 +36,8 @@ import java.util.Map;
 /**
  * Created by SinjinSong on 2017/4/27.
  */
-@CrossOrigin
+@BaseRESTController
 @RequestMapping("/users")
-@RestController
 @Api(value = "users", description = "用户API")
 @Slf4j
 public class UserController {

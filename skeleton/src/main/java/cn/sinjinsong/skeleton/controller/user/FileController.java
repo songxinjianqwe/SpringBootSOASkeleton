@@ -4,6 +4,7 @@ import cn.sinjinsong.common.enumeration.FileSource;
 import cn.sinjinsong.common.enumeration.FileType;
 import cn.sinjinsong.common.exception.file.FileTypeNotSuppertedException;
 import cn.sinjinsong.common.util.FileUtil;
+import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.security.domain.JWTUser;
 import cn.sinjinsong.skeleton.service.user.UserService;
@@ -20,8 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by SinjinSong on 2017/4/29.
  */
-@CrossOrigin
-@RestController
+@BaseRESTController
 @RequestMapping("/files")
 @Api(value = "files", description = "文件上传与下载")
 public class FileController {

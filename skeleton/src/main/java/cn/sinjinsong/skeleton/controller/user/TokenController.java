@@ -2,6 +2,7 @@ package cn.sinjinsong.skeleton.controller.user;
 
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.SpringContextUtil;
+import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.domain.dto.user.LoginDTO;
 import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
@@ -32,9 +33,8 @@ import javax.validation.Valid;
  * Created by SinjinSong on 2017/4/27.
  */
 
-@CrossOrigin
+@BaseRESTController
 @RequestMapping("/tokens")
-@RestController
 @Api(value = "tokens", description = "用户登录,toke")
 @Slf4j
 public class TokenController {
