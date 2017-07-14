@@ -1,10 +1,10 @@
 package cn.sinjinsong.skeleton.controller.user;
 
+import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.FileUtil;
 import cn.sinjinsong.common.util.SpringContextUtil;
 import cn.sinjinsong.common.util.UUIDUtil;
-import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.controller.user.handler.QueryUserHandler;
 import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.enumeration.user.UserStatus;

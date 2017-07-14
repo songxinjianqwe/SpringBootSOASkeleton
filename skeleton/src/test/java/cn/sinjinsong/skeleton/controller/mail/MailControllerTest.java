@@ -1,6 +1,6 @@
 package cn.sinjinsong.skeleton.controller.mail;
 
-import cn.sinjinsong.skeleton.BaseSpringTest;
+import cn.sinjinsong.skeleton.test.BaseSpringTest;
 import cn.sinjinsong.skeleton.domain.entity.mail.MailDO;
 import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
 import cn.sinjinsong.skeleton.service.mail.MailService;
@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
  * Created by SinjinSong on 2017/7/13.
  */
 @Slf4j
-public class MailControllerTest extends BaseSpringTest {
+public class MailControllerTest  extends BaseSpringTest {
     MockMvc mvc;
     @Autowired
     WebApplicationContext webApplicationConnect;

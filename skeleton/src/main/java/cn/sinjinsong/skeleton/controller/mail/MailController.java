@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.controller.mail;
 
+import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.exception.ValidationException;
-import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.domain.dto.mail.MailDTO;
 import cn.sinjinsong.skeleton.domain.entity.mail.MailDO;
 import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;

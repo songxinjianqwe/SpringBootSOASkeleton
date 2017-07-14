@@ -1,4 +1,4 @@
-package cn.sinjinsong.skeleton.controller.annotation;
+package cn.sinjinsong.common.annotation;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;

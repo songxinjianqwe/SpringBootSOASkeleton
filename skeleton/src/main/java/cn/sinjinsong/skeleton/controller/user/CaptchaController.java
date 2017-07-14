@@ -1,9 +1,9 @@
 package cn.sinjinsong.skeleton.controller.user;
 
+import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.domain.Captcha;
 import cn.sinjinsong.common.util.CaptchaUtil;
 import cn.sinjinsong.common.util.UUIDUtil;
-import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
 import io.swagger.annotations.Api;

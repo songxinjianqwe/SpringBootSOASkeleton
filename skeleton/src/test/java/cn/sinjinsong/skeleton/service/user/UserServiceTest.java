@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.service.user;
 
 import cn.sinjinsong.common.client.HttpClientManager;
-import cn.sinjinsong.skeleton.BaseSpringTest;
+import cn.sinjinsong.skeleton.test.BaseSpringTest;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 import cn.sinjinsong.skeleton.service.email.EmailService;
@@ -15,7 +15,7 @@ import org.springframework.context.MessageSource;
  * Created by SinjinSong on 2017/7/10.
  */
 @Slf4j
-public class UserServiceTest extends BaseSpringTest {
+public class UserServiceTest  extends BaseSpringTest{
     @Autowired
     private UserService userService;
     @Autowired

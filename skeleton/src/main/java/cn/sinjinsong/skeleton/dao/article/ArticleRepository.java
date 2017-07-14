@@ -9,5 +9,5 @@ import java.util.List;
  * Created by SinjinSong on 2017/7/13.
  */
 public interface ArticleRepository extends ElasticsearchRepository<ArticleDO,Long> {
-    List<ArticleDO> findByBodyLike(String keyWord); 
+    List<ArticleDO> findByBodyContaining(String keyWord); 
 }

@@ -1,8 +1,8 @@
 package cn.sinjinsong.skeleton.controller.user;
 
+import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.SpringContextUtil;
-import cn.sinjinsong.skeleton.controller.annotation.BaseRESTController;
 import cn.sinjinsong.skeleton.domain.dto.user.LoginDTO;
 import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
@@ -25,7 +25,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
