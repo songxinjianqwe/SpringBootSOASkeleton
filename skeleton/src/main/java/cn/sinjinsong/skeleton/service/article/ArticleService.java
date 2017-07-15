@@ -1,6 +1,7 @@
 package cn.sinjinsong.skeleton.service.article;
 
 import cn.sinjinsong.skeleton.domain.entity.article.ArticleDO;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ public interface ArticleService {
     Iterable<ArticleDO> findAll();
 
     List<ArticleDO> findByBodyContaining(String keyword);
+    
+    Page<ArticleDO> findByBodyContainingWithHighlight(String keyword, Integer pageNum, Integer pageSize);
 }

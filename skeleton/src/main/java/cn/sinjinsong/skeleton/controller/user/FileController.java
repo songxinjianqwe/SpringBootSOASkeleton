@@ -1,6 +1,5 @@
 package cn.sinjinsong.skeleton.controller.user;
 
-import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.enumeration.FileSource;
 import cn.sinjinsong.common.enumeration.FileType;
 import cn.sinjinsong.common.exception.file.FileTypeNotSuppertedException;
@@ -13,10 +12,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by SinjinSong on 2017/4/29.
  */
-@BaseRESTController
+@RestController
 @RequestMapping("/files")
 @Api(value = "files", description = "文件上传与下载")
 public class FileController {

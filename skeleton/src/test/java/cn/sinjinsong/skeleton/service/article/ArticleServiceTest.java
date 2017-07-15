@@ -1,15 +1,19 @@
 package cn.sinjinsong.skeleton.service.article;
 
-import cn.sinjinsong.skeleton.test.BaseSpringTest;
 import cn.sinjinsong.skeleton.domain.entity.article.ArticleDO;
+import cn.sinjinsong.skeleton.test.BaseSpringTest;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by SinjinSong on 2017/7/14.
  */
+@Slf4j
 public class ArticleServiceTest extends BaseSpringTest{
     @Autowired
     private ArticleService articleService;
@@ -57,6 +61,16 @@ public class ArticleServiceTest extends BaseSpringTest{
     @Test
     public void findByBodyContaining() throws Exception {
         articleService.findByBodyContaining("Hybrid").forEach(System.out::println);
+    }
+    
+    @Test
+    public void findByBodyContainingWithHighlight(){
+        Page<ArticleDO> hybrid = articleService.findByBodyContainingWithHighlight("Hybrid", 0, 5);
+        List<ArticleDO> content = hybrid.getContent();
+        log.info("size:{}",content.size());
+        for(ArticleDO article: content){
+            log.info("{}",article);
+        }
     }
 
 }

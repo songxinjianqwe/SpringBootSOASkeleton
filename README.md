@@ -29,7 +29,7 @@
 - WebSocket（待整合）
 - RabbitMQ（待整合）
 - OAUTH（待整合）
-- ElasticSearch（待整合）
+- ElasticSearch
 
 # 功能们：
 ## 用户模块
@@ -142,8 +142,12 @@
 
 ## ElasticSearch 学习
 ### application.properties
+
+默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口。
+
+
 在实体类上加入
-@Document
+#### @Document
 (indexName="article_index", //索引库的名称，个人建议以项目的名称命名（相当于一个Database）
  indexName 配置必须是全部小写，不然会出异常。
 type="article", //类型，个人建议以实体的名称命名（相当于一张表）
@@ -155,13 +159,93 @@ refreshInterval="-1" //刷新间隔
 在需要建立索引的类上加上@Document注解，即表明这个实体需要进行索引。默认情况下这个实体中所有的属性都会被建立索引、并且分词。
 在主键上加入@Id
 我们通过@Field注解来进行详细的指定。
-@Field
+#### @Field
 (format=DateFormat.date_time,  //default DateFormat.none;
 index=FieldIndex.no, //默认情况下分词
 store=true, //默认情况下不存储原文
 type=FieldType.Object) //自动检测属性的类型
 private Date postTime;
 
- 
- 
+### 构建查询：
+#### Query keywords(查询关键字)
+
+
+
+
+关键字             例子                  
+Elasticsearch查询语句
+
+And                 findByNameAndPrice
+{"bool" : {"must" : [ {"field" : {"name" : "?"}}, {"field" : {"price" : "?"}} ]}}
+
+Or                  findByNameOrPrice
+{"bool" : {"should" : [ {"field" : {"name" : "?"}}, {"field" : {"price" : "?"}} ]}}
+
+Is                  findByName
+{"bool" : {"must" : {"field" : {"name" : "?"}}}}
+
+Not                 findByNameNot
+{"bool" : {"must_not" : {"field" : {"name" : "?"}}}}
+
+LessThanEqual       findByPriceLessThan
+{"bool" : {"must" : {"range" : {"price" : {"from" : null,"to" : ?,"include_lower" : true,"include_upper" : true}}}}}
+
+GreaterThanEqual    findByPriceGreaterThan
+{"bool" : {"must" : {"range" : {"price" : {"from" : ?,"to" : null,"include_lower" : true,"include_upper" : true}}}}}
+
+Before              findByPriceBefore
+{"bool" : {"must" : {"range" : {"price" : {"from" : null,"to" : ?,"include_lower" : true,"include_upper" : true}}}}}
+
+After               findByPriceAfter
+{"bool" : {"must" : {"range" : {"price" : {"from" : ?,"to" : null,"include_lower" : true,"include_upper" : true}}}}}
+
+Like                findByNameLike
+{"bool" : {"must" : {"field" : {"name" : {"query" : "?*","analyze_wildcard" : true}}}}}
+
+StartingWith        findByNameStartingWith
+{"bool" : {"must" : {"field" : {"name" : {"query" : "?*","analyze_wildcard" : true}}}}}
+
+EndingWith          findByNameEndingWith
+{"bool" : {"must" : {"field" : {"name" : {"query" : "*?","analyze_wildcard" : true}}}}}
+
+Containing             findByNameContaining
+{"bool" : {"must" : {"field" : {"name" : {"query" : "?","analyze_wildcard" : true}}}}}
+
+In                  findByNameIn(Collectionnames)
+{"bool" : {"must" : {"bool" : {"should" : [ {"field" : {"name" : "?"}}, {"field" : {"name" : "?"}} ]}}}}
+
+NotIn               findByNameNotIn(Collectionnames)
+{"bool" : {"must_not" : {"bool" : {"should" : {"field" : {"name" : "?"}}}}}}
+
+
+True                findByAvailableTrue
+{"bool" : {"must" : {"field" : {"available" : true}}}}
+
+False               findByAvailableFalse
+{"bool" : {"must" : {"field" : {"available" : false}}}}
+
+OrderBy             findByAvailableTrueOrderByNameDesc
+{"sort" : [{ "name" : {"order" : "desc"} }],"bool" : {"must" : {"field" : {"available" : true}}}}
+
+
+#### @Query
+public interface BookRepository extends ElasticsearchRepository<Book, String> {
+    @Query("{"bool" : {"must" : {"field" : {"name" : "?0"}}}}")
+    Page<Book> findByName(String name,Pageable pageable);
+}
+
+#### 自定义Query
+Iterable<T> search(QueryBuilder query);
+Page<T> search(QueryBuilder query, Pageable pageable);
+Page<T> search(SearchQuery searchQuery);
+Page<T> searchSimilar(T entity, String[] fields, Pageable pageable);
+
+注意：Mybatis PageHelper 的起始页码是1，而Spring Data分页的起始页码是0
+它们的Page也不一样，统一使用时建议前端只看
+total
+pages
+pageNum
+pageSize
+size
+
 

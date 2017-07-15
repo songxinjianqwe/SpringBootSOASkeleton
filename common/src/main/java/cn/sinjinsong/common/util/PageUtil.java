@@ -2,6 +2,7 @@ package cn.sinjinsong.common.util;
 
 import cn.sinjinsong.common.converter.POVOConverter;
 import com.github.pagehelper.PageInfo;
+import org.springframework.data.domain.Page;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,17 @@ public class PageUtil {
         pageInfo.setNavigatePages(src.getNavigatePages());
         pageInfo.setLastPage(src.getLastPage());
         pageInfo.setFirstPage(src.getFirstPage());
+        return pageInfo;
+    }
+    
+    public static <E> PageInfo<E> convertToGeneralPage(Page<E> raw){
+        PageInfo<E> pageInfo = new PageInfo<>();
+        pageInfo.setList(raw.getContent());
+        pageInfo.setTotal(raw.getTotalElements());
+        pageInfo.setPages(raw.getTotalPages());
+        pageInfo.setPageNum(raw.getNumber() + 1);
+        pageInfo.setPageSize(raw.getSize());
+        pageInfo.setSize(raw.getNumberOfElements());
         return pageInfo;
     }
 }

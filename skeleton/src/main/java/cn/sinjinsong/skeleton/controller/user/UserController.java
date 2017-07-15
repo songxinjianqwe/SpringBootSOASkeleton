@@ -1,6 +1,5 @@
 package cn.sinjinsong.skeleton.controller.user;
 
-import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.FileUtil;
 import cn.sinjinsong.common.util.SpringContextUtil;
@@ -13,6 +12,7 @@ import cn.sinjinsong.skeleton.exception.user.QueryUserModeNotFoundException;
 import cn.sinjinsong.skeleton.exception.user.UserNotFoundException;
 import cn.sinjinsong.skeleton.exception.user.UsernameExistedException;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
+import cn.sinjinsong.skeleton.properties.PageProperties;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
 import cn.sinjinsong.skeleton.service.email.EmailService;
 import cn.sinjinsong.skeleton.service.user.UserService;
@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * Created by SinjinSong on 2017/4/27.
  */
-@BaseRESTController
+@RestController
 @RequestMapping("/users")
 @Api(value = "users", description = "用户API")
 @Slf4j
@@ -196,7 +196,7 @@ public class UserController {
     @PreAuthorize("hasRole('ADMIN')")
     @ApiOperation(value = "分页查询用户信息", response = PageInfo.class, authorizations = {@Authorization("登录权限")})
     @ApiResponses(value = {@ApiResponse(code = 401, message = "未登录")})
-    public PageInfo<UserDO> findAllUsers(@RequestParam("pageNum") @ApiParam(value = "页码，从1开始", defaultValue = "1") Integer pageNum, @RequestParam("pageSize") @ApiParam(value = "每页记录数", defaultValue = "5") Integer pageSize) {
+    public PageInfo<UserDO> findAllUsers(@RequestParam(value="pageNum",required = false,defaultValue = PageProperties.DEFAULT_PAGE_NUM) @ApiParam(value = "页码，从1开始", defaultValue = PageProperties.DEFAULT_PAGE_NUM) Integer pageNum, @RequestParam(value = "pageSize",required = false,defaultValue = PageProperties.DEFAULT_PAGE_SIZE) @ApiParam(value = "每页记录数", defaultValue = PageProperties.DEFAULT_PAGE_SIZE) Integer pageSize) {
         return service.findAll(pageNum, pageSize);
     }
 }

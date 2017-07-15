@@ -1,6 +1,5 @@
 package cn.sinjinsong.skeleton.controller.user;
 
-import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.SpringContextUtil;
 import cn.sinjinsong.skeleton.domain.dto.user.LoginDTO;
@@ -28,6 +27,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -35,7 +35,7 @@ import javax.validation.Valid;
  * Created by SinjinSong on 2017/4/27.
  */
 
-@BaseRESTController
+@RestController
 @RequestMapping("/tokens")
 @Api(value = "tokens", description = "用户登录,toke")
 @Slf4j

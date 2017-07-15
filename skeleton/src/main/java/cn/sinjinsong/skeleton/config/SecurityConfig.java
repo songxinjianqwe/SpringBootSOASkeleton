@@ -109,6 +109,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/users/*/password/reset_validation").permitAll()
                 //用户忘记密码后重置密码
                 .antMatchers(HttpMethod.PUT, "/users/*/password").permitAll()
+                .antMatchers(HttpMethod.GET,"/articles/**").permitAll()
                 //获取token
                 .antMatchers(HttpMethod.POST, "/tokens").permitAll().and()
                 //除上面外的所有请求全部需要鉴权认证

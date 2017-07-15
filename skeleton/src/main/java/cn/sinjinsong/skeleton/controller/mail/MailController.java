@@ -1,6 +1,5 @@
 package cn.sinjinsong.skeleton.controller.mail;
 
-import cn.sinjinsong.common.annotation.BaseRESTController;
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.skeleton.domain.dto.mail.MailDTO;
 import cn.sinjinsong.skeleton.domain.entity.mail.MailDO;
@@ -25,7 +24,7 @@ import javax.validation.Valid;
 /**
  * Created by SinjinSong on 2017/5/5.
  */
-@BaseRESTController
+@RestController
 @RequestMapping("mails")
 @Api(value = "mails", description = "站内信模块")
 @Slf4j
