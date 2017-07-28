@@ -49,7 +49,7 @@ public class ArticleServiceImpl implements ArticleService {
     public List<ArticleDO> findByBodyContaining(String keyword) {
         return articleRepository.findByBodyContaining(keyword);
     }
-
+    
     @Override
     public Page<ArticleDO> findByBodyContainingWithHighlight(String keyword, Integer pageNum, Integer pageSize) {
         FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery()

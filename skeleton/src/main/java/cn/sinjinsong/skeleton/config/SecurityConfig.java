@@ -93,6 +93,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/configuration/ui",
                         "/swagge‌​r-ui.html",
                         "/swagger-resources/configuration/security").permitAll()
+                //允许访问websocket页面
+                .antMatchers(HttpMethod.GET,"/ws").permitAll()
+                //允许向websocket的某个endpoint发送消息
+                .antMatchers("/endpoint/**").permitAll()
                 //允许访问Druid监控
                 .antMatchers("/druid/**").permitAll()
                 //获取图片验证码

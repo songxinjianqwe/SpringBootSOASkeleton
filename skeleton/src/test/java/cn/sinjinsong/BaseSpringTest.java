@@ -1,5 +1,4 @@
-package cn.sinjinsong.skeleton.test;
-
+package cn.sinjinsong;
 
 import cn.sinjinsong.skeleton.SpringBootSkeletonApplication;
 import org.junit.runner.RunWith;

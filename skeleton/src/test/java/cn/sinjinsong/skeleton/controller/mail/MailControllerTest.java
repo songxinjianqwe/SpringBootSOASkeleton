@@ -1,6 +1,6 @@
 package cn.sinjinsong.skeleton.controller.mail;
 
-import cn.sinjinsong.skeleton.test.BaseSpringTest;
+import cn.sinjinsong.BaseSpringTest;
 import cn.sinjinsong.skeleton.domain.entity.mail.MailDO;
 import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
 import cn.sinjinsong.skeleton.service.mail.MailService;

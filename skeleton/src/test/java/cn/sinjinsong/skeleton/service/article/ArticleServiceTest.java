@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.service.article;
 
+import cn.sinjinsong.BaseSpringTest;
 import cn.sinjinsong.skeleton.domain.entity.article.ArticleDO;
-import cn.sinjinsong.skeleton.test.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.List;
  * Created by SinjinSong on 2017/7/14.
  */
 @Slf4j
-public class ArticleServiceTest extends BaseSpringTest{
+public class ArticleServiceTest extends BaseSpringTest {
     @Autowired
     private ArticleService articleService;
     

@@ -1,4 +1,4 @@
-package cn.sinjinsong.skeleton.properties;
+package cn.sinjinsong.common.properties;
 
 /**
  * Created by SinjinSong on 2017/7/13.

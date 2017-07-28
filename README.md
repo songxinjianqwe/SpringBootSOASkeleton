@@ -23,6 +23,7 @@
 - MockMvc
 - HTTPS
 - Spring DevTools
+- Spring Actuator
 - Logback+Slf4j多环境日志
 - i18n
 - Maven Multi-Module
@@ -139,6 +140,8 @@
          ```
     3.  设置HTTP转向HTTPS   ->HTTPSConfig
 
+24. 如果想直接访问html，那么必须在WebConfig里设置registry
+    所有的html都放在/templates下
 
 ## ElasticSearch 学习
 ### application.properties
@@ -248,4 +251,76 @@ pageNum
 pageSize
 size
 
+
+## WebSocket
+
+### 参考资料：
+> http://lrwinx.github.io/2017/07/09/%E5%86%8D%E8%B0%88websocket-%E8%AE%BA%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/
+> http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html
+> http://blog.csdn.net/daniel7443/article/details/54377326
+> http://www.cnblogs.com/winkey4986/p/5622758.html
+### 功能：
+- 实现服务器端的消息推送，实时页面刷新
+- 即时通讯，单聊&群聊
+### 实现：
+ 1. @EnableWebSocketMessageBroker注解表示开启使用STOMP协议来传输基于代理的消息，Broker就是代理的意思。 
+ 2. registerStompEndpoints方法表示注册STOMP协议的节点，并指定映射的URL。 
+ 3. stompEndpointRegistry.addEndpoint("/endpointSang").withSockJS();这一行代码用来注册STOMP协议节点，同时指定使用SockJS协议。 
+ 4. configureMessageBroker方法用来配置消息代理，由于我们是实现推送功能，这里的消息代理是/topic
+### 配置：
+ 1. registry.enableSimpleBroker("/topic","/user");
+ 2. registry.setApplicationDestinationPrefixes("/app");
+ 3. registry.setUserDestinationPrefix("/user/");
+ 第一个是作为@SendTo的前缀
+ 第二三个是作为客户端发送信息send的前缀，后接@MessageMapping
+### 身份验证：
+JWT
+见WebSocketConfig
+### 消息推送：
+客户端有两种消息发送方式：
+1. 经过了服务器编写的MessageHandler(@MessageMapping)，适用于需要服务器对消息进行处理的，客户端将消息发送给服务器，服务器将消息处理后
+广播给所有用户。
+示例：客户端订阅了/greetings，并会向/hello发送数据
+实现：
+- 服务器：@MessageMapping("/hello")   @SendTo("/topic/greetings")
+- 客户端：stompClient.send("/app/hello", {}, JSON.stringify(...));
+         stompClient.subscribe('/topic/greetings', function (response) {
+                showResponse(JSON.parse(response.body).body);
+         });   
+
+2. 不经过服务器，客户端发送的消息直接广播给所有用户，此时send和subscribe的路径是一样的
+示例：客户端订阅了/greetings，并会向/greetings发送数据
+实现：
+- 服务器：什么都不用做
+- 客户端：stompClient.send("/topic/greetings", {}, JSON.stringify(...));
+         stompClient.subscribe('/topic/greetings', function (response) {
+                showResponse(JSON.parse(response.body).body);
+         });
+
+共同点：都需要登录
+
+
+- @MessageMapping 客户端发送路径
+@MessageMapping注解和我们之前使用的@RequestMapping类似。客户端向该(ApplicationPrefix+@MessageMapping)路径发送消息。
+@MessageMapping("/hello")
+stompClient.send("/app/hello", {}, JSON.stringify({'body': name}));
+客户端会先将信息发送到代理（Broker，位于服务器），然后Broker会再将处理后的信息发送给客户端
+
+- @SendTo 客户端接收路径
+@SendTo注解表示当服务器有消息需要推送的时候，会对订阅了@SendTo中路径的浏览器发送消息。
+@SendTo("/topic/xxx")中必须要以WebSocketConfig中messageBroker中设置的任一Prefix("/topic")为前缀
+
+
+### 聊天
+- @SendToUser  
+发送给单一客户端的标志
+注意是谁请求的发送给谁
+
+- convertAndSend 
+template.convertAndSend("/topic/hello",greeting) //广播  
+
+- convertAndSendToUser
+convertAndSendToUser(userId, "/message",userMessage) //一对一发送，发送特定的客户端 
+
+- @MessageExceptionHandler
 
