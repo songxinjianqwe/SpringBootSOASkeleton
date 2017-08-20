@@ -29,6 +29,7 @@
         <protostuff.version>1.5.2</protostuff.version>
         <swagger.version>2.6.1</swagger.version>
         <start-class>cn.sinjinsong.skeleton.SpringBootSkeletonApplication</start-class>
+        <docker.image.prefix>SpringBootSkeleton</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -101,7 +102,10 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
         <dependency>
@@ -193,5 +197,5 @@
             <version>0.7.0</version>
         </dependency>
     </dependencies>
-
+        
 </project>

@@ -143,14 +143,14 @@
 24. 如果想直接访问html，那么必须在WebConfig里设置registry
     所有的html都放在/templates下
 
-## ElasticSearch 学习
-### application.properties
+# ElasticSearch 学习
+## application.properties
 
 默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口。
 
 
 在实体类上加入
-#### @Document
+## @Document
 (indexName="article_index", //索引库的名称，个人建议以项目的名称命名（相当于一个Database）
  indexName 配置必须是全部小写，不然会出异常。
 type="article", //类型，个人建议以实体的名称命名（相当于一张表）
@@ -162,15 +162,15 @@ refreshInterval="-1" //刷新间隔
 在需要建立索引的类上加上@Document注解，即表明这个实体需要进行索引。默认情况下这个实体中所有的属性都会被建立索引、并且分词。
 在主键上加入@Id
 我们通过@Field注解来进行详细的指定。
-#### @Field
+## @Field
 (format=DateFormat.date_time,  //default DateFormat.none;
 index=FieldIndex.no, //默认情况下分词
 store=true, //默认情况下不存储原文
 type=FieldType.Object) //自动检测属性的类型
 private Date postTime;
 
-### 构建查询：
-#### Query keywords(查询关键字)
+## 构建查询：
+### Query keywords(查询关键字)
 
 
 
@@ -231,13 +231,13 @@ OrderBy             findByAvailableTrueOrderByNameDesc
 {"sort" : [{ "name" : {"order" : "desc"} }],"bool" : {"must" : {"field" : {"available" : true}}}}
 
 
-#### @Query
+### @Query
 public interface BookRepository extends ElasticsearchRepository<Book, String> {
     @Query("{"bool" : {"must" : {"field" : {"name" : "?0"}}}}")
     Page<Book> findByName(String name,Pageable pageable);
 }
 
-#### 自定义Query
+### 自定义Query
 Iterable<T> search(QueryBuilder query);
 Page<T> search(QueryBuilder query, Pageable pageable);
 Page<T> search(SearchQuery searchQuery);
@@ -252,31 +252,31 @@ pageSize
 size
 
 
-## WebSocket
+# WebSocket
 
-### 参考资料：
+## 参考资料：
 > http://lrwinx.github.io/2017/07/09/%E5%86%8D%E8%B0%88websocket-%E8%AE%BA%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/
 > http://docs.spring.io/spring/docs/current/spring-framework-reference/html/websocket.html
 > http://blog.csdn.net/daniel7443/article/details/54377326
 > http://www.cnblogs.com/winkey4986/p/5622758.html
-### 功能：
+## 功能：
 - 实现服务器端的消息推送，实时页面刷新
 - 即时通讯，单聊&群聊
-### 实现：
+## 实现：
  1. @EnableWebSocketMessageBroker注解表示开启使用STOMP协议来传输基于代理的消息，Broker就是代理的意思。 
  2. registerStompEndpoints方法表示注册STOMP协议的节点，并指定映射的URL。 
  3. stompEndpointRegistry.addEndpoint("/endpointSang").withSockJS();这一行代码用来注册STOMP协议节点，同时指定使用SockJS协议。 
  4. configureMessageBroker方法用来配置消息代理，由于我们是实现推送功能，这里的消息代理是/topic
-### 配置：
+## 配置：
  1. registry.enableSimpleBroker("/topic","/user");
  2. registry.setApplicationDestinationPrefixes("/app");
  3. registry.setUserDestinationPrefix("/user/");
  第一个是作为@SendTo的前缀
  第二三个是作为客户端发送信息send的前缀，后接@MessageMapping
-### 身份验证：
+## 身份验证：
 JWT
 见WebSocketConfig
-### 消息推送：
+## 消息推送：
 客户端有两种消息发送方式：
 1. 经过了服务器编写的MessageHandler(@MessageMapping)，适用于需要服务器对消息进行处理的，客户端将消息发送给服务器，服务器将消息处理后
 广播给所有用户。
@@ -311,7 +311,7 @@ stompClient.send("/app/hello", {}, JSON.stringify({'body': name}));
 @SendTo("/topic/xxx")中必须要以WebSocketConfig中messageBroker中设置的任一Prefix("/topic")为前缀
 
 
-### 聊天
+## 聊天
 - @SendToUser  
 发送给单一客户端的标志
 注意是谁请求的发送给谁
@@ -324,3 +324,35 @@ convertAndSendToUser(userId, "/message",userMessage) //一对一发送，发送�
 
 - @MessageExceptionHandler
 
+# Spring Boot Actuator
+HTTP方法	路径	描述	鉴权
+GET	/autoconfig	查看自动配置的使用情况	true
+GET	/configprops	查看配置属性，包括默认配置	true
+GET	/beans	查看bean及其关系列表	true
+GET	/dump	打印线程栈	true
+GET	/env	查看所有环境变量	true
+GET	/env/{name}	查看具体变量值	true
+GET	/health	查看应用健康指标	false
+GET	/info	查看应用信息	false
+GET	/mappings	查看所有url映射	true
+GET	/metrics	查看应用基本指标	true
+GET	/metrics/{name}	查看具体指标	true
+POST /shutdown	关闭应用	true
+GET	/trace	查看基本追踪信息	true
+
+# Spring Boot in Docker
+
+## All in one
+
+需要在Docker里安装MySQL，Redis，Nginx，ElasticSearch，JDK
+
+docker pull java:8
+docker pull mysql
+docker pull redis
+docker pull es
+
+
+
+## 非服务化分布式
+
+## 服务化分布式
