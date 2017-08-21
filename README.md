@@ -354,6 +354,8 @@ docker pull es
 
 
 ## 非服务化分布式
+
+### MySQL读写分离
 <!-- 启动对@Aspectj的支持 true为cglib，false为jdk代理，为true的话，会导致拦截不了mybatis的mapper-->
     <aop:aspectj-autoproxy proxy-target-class="false" />
 注意数据源的切换必须要在事务开启之前，不能在开启事务时没有确定数据源
