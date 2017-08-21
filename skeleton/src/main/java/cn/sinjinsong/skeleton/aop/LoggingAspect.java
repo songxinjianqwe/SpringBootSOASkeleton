@@ -4,15 +4,16 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 import java.util.Arrays;
 
 @Aspect
+@Order(2)
 @Configuration
 @Slf4j
 public class LoggingAspect {
-    //execution(* cn.sinjinsong.skeleton.service.*.*(..))
-    @Pointcut("@within(org.springframework.stereotype.Service)||@annotation(org.springframework.web.bind.annotation.RequestMapping)")
+    @Pointcut("execution(* cn.sinjinsong.skeleton.service..*.*(..))||@annotation(org.springframework.web.bind.annotation.RequestMapping)||execution(* cn.sinjinsong.skeleton.dao..*.*(..))")
     public void declareJoinPointExpression() {
     }
 

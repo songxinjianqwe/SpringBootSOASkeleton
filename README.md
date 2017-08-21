@@ -354,5 +354,20 @@ docker pull es
 
 
 ## 非服务化分布式
+<!-- 启动对@Aspectj的支持 true为cglib，false为jdk代理，为true的话，会导致拦截不了mybatis的mapper-->
+    <aop:aspectj-autoproxy proxy-target-class="false" />
+注意数据源的切换必须要在事务开启之前，不能在开启事务时没有确定数据源
+
+动态数据源切换与事务：
+事务是加在Service上的，也就是一个service方法中间不能切换数据源
+如果数据源的切换是拦截了DAO，那么是有问题的，因为在service开启事务时无法确定数据源，并且同一个事务中间即使调用了多个dao方法，也不能切换数据源。
+解决方法1是拦截service
+解决方法2是将事务加在service上，但是不推荐这样做。
+
+现在采用的是方法1，是根据service的方法上的@Transactional注解的readOnly属性判断
+这就要求我们在编写service时：
+所有service上的方法都必须加上@Transactional注解
+如果该方法不涉及任何的写操作，那么必须指定readOnly属性为true
+该属性的默认值是false
 
 ## 服务化分布式

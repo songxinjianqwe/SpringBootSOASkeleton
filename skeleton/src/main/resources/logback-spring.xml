@@ -24,6 +24,7 @@
 
     <springProfile name="pro">
         <logger name="cn.sinjinsong" level="INFO" additivity="false">
+            <appender-ref ref="consoleAppender"/>
             <appender-ref ref="fileAppender"/>
         </logger>
         <logger name="dao" level="DEBUG" additivity="false">

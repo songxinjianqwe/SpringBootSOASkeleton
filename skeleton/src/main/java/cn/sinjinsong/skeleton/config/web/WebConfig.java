@@ -1,4 +1,4 @@
-package cn.sinjinsong.skeleton.config;
+package cn.sinjinsong.skeleton.config.web;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

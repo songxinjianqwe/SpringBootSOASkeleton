@@ -6,6 +6,7 @@ import cn.sinjinsong.skeleton.domain.entity.user.UserDO;
 import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
 import cn.sinjinsong.skeleton.service.user.UserService;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -19,6 +20,7 @@ import java.time.LocalDateTime;
  * Created by SinjinSong on 2017/4/27.
  */
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDOMapper userDOMapper;

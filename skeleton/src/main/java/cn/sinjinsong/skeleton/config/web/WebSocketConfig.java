@@ -1,4 +1,4 @@
-package cn.sinjinsong.skeleton.config;
+package cn.sinjinsong.skeleton.config.web;
 
 import cn.sinjinsong.skeleton.exception.token.TokenStateInvalidException;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;

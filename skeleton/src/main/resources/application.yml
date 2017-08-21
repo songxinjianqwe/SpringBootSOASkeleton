@@ -60,12 +60,13 @@ spring:
       cache: false
     aop:
       auto: true
-      proxy-target-class: true
+      # 使用JDK代理，只有这样才能用Spring AOP拦截Mapper接口实现类 
+      proxy-target-class: false 
     
 ## Mybatis配置
 mybatis:
-    mapperLocations: classpath:mapper/*.xml
-    configLocation: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
     
 # Mybatis PageHelper
 pagehelper:
