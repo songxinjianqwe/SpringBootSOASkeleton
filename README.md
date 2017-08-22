@@ -15,7 +15,8 @@
 - FileUpload
 - Spring Scheduler
 - Hibernate Validator
-- Redis
+- Redis Cluster
+- MySQL主从复制，读写分离
 - Spring Async
 - Spring Cache
 - Swagger
@@ -27,9 +28,7 @@
 - Logback+Slf4j多环境日志
 - i18n
 - Maven Multi-Module
-- WebSocket（待整合）
-- RabbitMQ（待整合）
-- OAUTH（待整合）
+- WebSocket
 - ElasticSearch
 
 # 功能们：
@@ -87,7 +86,6 @@
      - @ConfigurationProperties(prefix = "auth")
      - @PropertySource("classpath:auth.properties")
      - setter & getter 
-    不喜欢使用@Value，每个属性都要写一遍名字
 
 8. 所以写静态资源位置的时候，不要带上映射的目录名（如/static/，/public/ ，/resources/，/META-INF/resources/）！
 
@@ -339,18 +337,6 @@ GET	/metrics	查看应用基本指标	true
 GET	/metrics/{name}	查看具体指标	true
 POST /shutdown	关闭应用	true
 GET	/trace	查看基本追踪信息	true
-
-# Spring Boot in Docker
-
-## All in one
-
-需要在Docker里安装MySQL，Redis，Nginx，ElasticSearch，JDK
-
-docker pull java:8
-docker pull mysql
-docker pull redis
-docker pull es
-
 
 
 ## 非服务化分布式

@@ -118,7 +118,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/tokens").permitAll().and()
                 //除上面外的所有请求全部需要鉴权认证
                 .authorizeRequests().anyRequest().authenticated().and();
-                //Filter要放到是否认证的配置之后
 
         // 禁用缓存
         httpSecurity
