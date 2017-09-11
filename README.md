@@ -359,3 +359,15 @@ GET	/trace	查看基本追踪信息	true
 该属性的默认值是false
 
 ## 服务化分布式
+
+
+### RocketMQ
+添加依赖
+```
+<!-- https://mvnrepository.com/artifact/com.alibaba.rocketmq/rocketmq-client -->
+<dependency>
+    <groupId>com.alibaba.rocketmq</groupId>
+    <artifactId>rocketmq-client</artifactId>
+    <version>3.2.6</version>
+</dependency>
+```
