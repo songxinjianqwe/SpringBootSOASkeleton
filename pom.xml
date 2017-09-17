@@ -9,6 +9,8 @@
     <modules>
         <module>common</module>
         <module>skeleton</module>
+        <module>mq-producer-pay</module>
+        <module>mq-consumer-balance</module>
     </modules>
     <packaging>pom</packaging>
 

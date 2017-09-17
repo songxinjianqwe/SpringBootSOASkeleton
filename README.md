@@ -371,3 +371,17 @@ GET	/trace	查看基本追踪信息	true
     <version>3.2.6</version>
 </dependency>
 ```
+
+共两个示例
+1. skeleton整合了最简单的producer和consumer，业务逻辑放在Application的main方法中
+2. mq-producer-pay和mq-consumer-balance模拟转账事务
+   先启动broker们
+   启动consumer，入口是main方法
+   启动producer，入门是main方法
+   
+   业务逻辑是pay向balance转账1000元
+   
+   
+
+
+

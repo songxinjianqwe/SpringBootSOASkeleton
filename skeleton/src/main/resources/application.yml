@@ -1,10 +1,10 @@
 # Tomcat
 server:
+    port: 8080
     tomcat:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-        port: 8080   
 #    port: 8443 #如果使用HTTPS，那需要监听在8443端口
 #    ssl:
 #      key-store: .keystore
