@@ -40,7 +40,7 @@ public class PayServiceImpl implements PayService {
 		record.setUpdateTime(LocalDateTime.now());
 		this.updateByPrimaryKey(record);
 		//失败测试：
-		//int a = 1/0;
+//		int a = 1/0;
 	}
 	
 	public void updateDetail(PayDO record, String detail) {

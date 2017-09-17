@@ -54,6 +54,15 @@ public class PayApplication extends SpringBootServletInitializer {
             //这个参数可以在transactionExecutorImpl中使用
             Map<String, Object> transactionMapArgs = new HashMap<String, Object>();
             mqProducer.sendTransactionMessage(message, transactionExecutorImpl, transactionMapArgs);
+            
+            //1、构造消息
+            //2、发送PrepareMessage
+            //3、执行transactionExecutorImpl的executeLocalTransactionBranch方法
+            //本方法中执行本地事务
+            //4、如果事务执行成功，该方法返回COMMIT_MESSAGE。
+            //   执行失败，返回ROLLBACK_MESSAGE
+            //5、返回COMMIT_MESSAGE时，会将预消息发送出去
+            //   返回ROLLBACK_MESSAGE，会取消该消息的发送
         } catch (Exception e) {
             e.printStackTrace();
         }
