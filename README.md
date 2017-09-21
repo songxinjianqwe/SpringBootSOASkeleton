@@ -396,3 +396,9 @@ GET	/trace	查看基本追踪信息	true
 ```
 
 共一个示例：zk模块下面都是zookeeper客户端的示例代码
+
+
+## 服务化分布式：Dubbo
+分为provider和consumer
+service:当前有user、article、mail、email模块
+ 

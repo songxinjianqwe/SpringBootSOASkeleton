@@ -8,13 +8,18 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>common</module>
-        <module>skeleton</module>
-        <module>mq-producer-pay</module>
-        <module>mq-consumer-balance</module>
-        <module>zk</module>
+        <module>web</module>
+        <module>user-api</module>
+        <module>user-service</module>
+        <module>mail-api</module>
+        <module>mail-service</module>
+        <module>email-api</module>
+        <module>email-service</module>
+        <module>article-api</module>
+        <module>article-service</module>
     </modules>
     <packaging>pom</packaging>
-
+    
     <name>SpringBootSkeleton</name>
     <description>SpringBootSkeleton</description>
 
@@ -31,8 +36,7 @@
         <java.version>1.8</java.version>
         <protostuff.version>1.5.2</protostuff.version>
         <swagger.version>2.6.1</swagger.version>
-        <start-class>cn.sinjinsong.skeleton.SpringBootSkeletonApplication</start-class>
-        <docker.image.prefix>SpringBootSkeleton</docker.image.prefix>
+        <!--<start-class>cn.sinjinsong.skeleton.SpringBootSkeletonApplication</start-class>-->
     </properties>
 
     <dependencies>
@@ -114,7 +118,7 @@
             <artifactId>spring-boot-starter-dubbo</artifactId>
             <version>1.0.0</version>
         </dependency>
-        
+
         <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
         <dependency>
             <groupId>commons-collections</groupId>
@@ -204,19 +208,10 @@
             <artifactId>jjwt</artifactId>
             <version>0.7.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba.rocketmq/rocketmq-client -->
         <dependency>
-            <groupId>com.alibaba.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version>3.2.6</version>
+            <groupId>org.bytesoft</groupId>
+            <artifactId>bytetcc-supports-dubbo</artifactId>
+            <version>0.4.0-rc1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.5</version>
-        </dependency>
-
     </dependencies>
-
 </project>
