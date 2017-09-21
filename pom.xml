@@ -11,6 +11,7 @@
         <module>skeleton</module>
         <module>mq-producer-pay</module>
         <module>mq-consumer-balance</module>
+        <module>zk</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -203,6 +204,12 @@
             <groupId>com.alibaba.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
             <version>3.2.6</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.5</version>
         </dependency>
     </dependencies>
 

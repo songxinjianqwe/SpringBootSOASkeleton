@@ -385,4 +385,14 @@ GET	/trace	查看基本追踪信息	true
    
 
 
+### Zookeeper
+添加依赖
+```
+<dependency>
+    <groupId>org.apache.zookeeper</groupId>
+    <artifactId>zookeeper</artifactId>
+    <version>3.4.5</version>
+</dependency>
+```
 
+共一个示例：zk模块下面都是zookeeper客户端的示例代码
