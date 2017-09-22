@@ -1,18 +1,20 @@
 package cn.sinjinsong.common.config.db;
 
+import cn.sinjinsong.common.condition.DBCondition;
 import cn.sinjinsong.common.enumeration.db.DataSourceType;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.List;
@@ -24,24 +26,31 @@ import java.util.Map;
  */
 @Configuration
 @Slf4j
-@MapperScan("cn.sinjinsong.skeleton.dao.dao")
+@MapperScan("cn.sinjinsong.skeleton.dao")
 public class MyBatisConfig {
 
-    @Value("${datasource.type}")
+    @Value("${datasource.type:}")
     private Class<? extends DataSource> dataSourceType;
-    @Value("${datasource.readSize}")
-    private String dataSourceSize;
-    @Resource(name = "writeDataSource")
-    private DataSource dataSource;
-    @Resource(name = "readDataSources")
-    private List<DataSource> readDataSources;
-    @Value("${mybatis.mapper-locations}")
-    private String mapperLocations;
-    @Value("${mybatis.config-location}")
-    private String configLocation;
     
+    @Value("${datasource.readSize:}")
+    private String dataSourceSize;
+    
+    @Autowired(required = false)
+    @Qualifier("writeDataSource")
+    private DataSource dataSource;
+    
+    @Autowired(required = false)
+    @Qualifier("readDataSources")
+    private List<DataSource> readDataSources;
+    
+    @Value("${mybatis.mapper-locations:}")
+    private String mapperLocations;
+    
+    @Value("${mybatis.config-location:}")
+    private String configLocation;
+
     @Bean
-    @ConditionalOnMissingBean
+    @Conditional(DBCondition.class)
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(roundRobinDataSourceProxy());
@@ -57,6 +66,7 @@ public class MyBatisConfig {
      * @return
      */
     @Bean
+    @Conditional(DBCondition.class)
     public AbstractRoutingDataSource roundRobinDataSourceProxy() {
         int size = Integer.parseInt(dataSourceSize);
         MyAbstractRoutingDataSource proxy = new MyAbstractRoutingDataSource(size);

@@ -1,28 +1,30 @@
 package cn.sinjinsong.skeleton;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by SinjinSong on 2017/9/22.
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableConfigurationProperties
 @ComponentScan({"cn.sinjinsong"})
 @Slf4j
-public class EmailApplication extends SpringBootServletInitializer {
+public class EmailApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(EmailApplication.class, args);
+        SpringApplication app = new SpringApplication(EmailApplication.class);
+        app.setWebEnvironment(false);
+        app.run(args);
     }
-    
+
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(EmailApplication.class);
+    public void run(String... args) throws Exception {
+
     }
 }

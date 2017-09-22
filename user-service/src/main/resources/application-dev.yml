@@ -1,14 +1,4 @@
 spring:
-  data:
-    elasticsearch: 
-      #必须与elasticsearch的elasticsearch.yml 的cluster-name一致
-      cluster-name: elasticsearch 
-      #配置es节点信息，逗号分隔，如果没有指定，则启动ClientNode 默认 9300 是 Java 客户端的端口
-      cluster-nodes: 192.168.1.115:9300 
-      local: false
-      repositories:
-          enable: true
-                
   redis:
   # Redis数据库索引（默认为0）
     database: 0  

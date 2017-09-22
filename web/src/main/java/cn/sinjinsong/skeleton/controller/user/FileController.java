@@ -7,6 +7,7 @@ import cn.sinjinsong.common.util.FileUtil;
 import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.service.UserService;
+import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/files")
 @Api(value = "files", description = "文件上传与下载")
 public class FileController {
-    @Autowired
+    @Reference(version="1.0.0")
     private UserService service;
     
     @ResponseStatus(HttpStatus.CREATED)

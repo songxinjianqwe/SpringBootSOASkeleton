@@ -1,7 +1,9 @@
 package cn.sinjinsong.skeleton.service.impl;
 
 import cn.sinjinsong.common.exception.file.FileNotFoundException;
+import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 import cn.sinjinsong.skeleton.service.EmailService;
+import com.alibaba.dubbo.config.annotation.Service;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -11,10 +13,8 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * Created by SinjinSong on 2017/5/5.
  */
-@Service
+@Service(version="1.0.0")
 @Async("emailExecutor")
 @ConfigurationProperties(prefix = "spring.mail")
 @Getter

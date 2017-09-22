@@ -105,7 +105,8 @@
 
 15. @EnableAsync @EnableTransactionManagement @EnableCaching @EnableScheduling @EnableWebSecurity @EnableSwagger2
     - @EnableTransactionManagement | @EnableWebSecurity  可以不加，自动配置
-16. @Conditional
+16. @Conditional 
+    如果不需要访问数据库，那么application.yml就不需要配置mybatis-mappers...
 
 17. 注册Servlet、Filter、Listener 
 

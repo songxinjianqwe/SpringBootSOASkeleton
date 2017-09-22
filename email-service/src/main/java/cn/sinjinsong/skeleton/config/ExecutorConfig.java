@@ -1,4 +1,4 @@
-package cn.sinjinsong.common.config;
+package cn.sinjinsong.skeleton.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +17,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 @Configuration
 @ConfigurationProperties(prefix = "executor")
-@PropertySource("classpath:task.properties")
+@PropertySource("classpath:executor.properties")
 @Getter
 @Setter
 @EnableAsync

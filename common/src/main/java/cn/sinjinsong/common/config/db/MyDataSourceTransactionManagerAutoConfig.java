@@ -1,9 +1,11 @@
 package cn.sinjinsong.common.config.db;
 
+import cn.sinjinsong.common.condition.DBCondition;
 import cn.sinjinsong.common.util.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -22,6 +24,7 @@ public class MyDataSourceTransactionManagerAutoConfig extends DataSourceTransact
      * @return
      */
     @Bean(name = "transactionManager")
+    @Conditional(DBCondition.class)
     public DataSourceTransactionManager transactionManagers() {
         log.info("-------------------- transactionManager init ---------------------");
         return new DataSourceTransactionManager(SpringContextUtil.getBean("roundRobinDataSourceProxy"));

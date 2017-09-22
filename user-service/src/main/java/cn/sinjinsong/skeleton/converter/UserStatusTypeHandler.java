@@ -1,4 +1,4 @@
-package cn.sinjinsong.skeleton.enumeration.conversion;
+package cn.sinjinsong.skeleton.converter;
 
 
 import cn.sinjinsong.skeleton.enumeration.UserStatus;

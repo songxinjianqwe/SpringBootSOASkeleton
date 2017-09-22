@@ -3,10 +3,12 @@ package cn.sinjinsong.skeleton.domain.dto;
 
 import cn.sinjinsong.common.exception.base.BaseRESTException;
 
+import java.io.Serializable;
+
 /**
  * Created by SinjinSong on 2017/5/9.
  */
-public class TokenCheckResult {
+public class TokenCheckResult implements Serializable{
     private boolean isValid;
     private String username;
     private BaseRESTException exception;

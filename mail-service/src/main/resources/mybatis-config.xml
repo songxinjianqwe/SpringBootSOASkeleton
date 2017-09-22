@@ -25,11 +25,10 @@
         <!-- 指定日志输出器 -->
         <setting name="logImpl" value="LOG4J"/>
     </settings>
-
+    
     <typeHandlers>
-        <typeHandler handler="cn.sinjinsong.skeleton.enumeration.conversion.MailStatusTypeHandler"
-                     javaType="cn.sinjinsong.skeleton.enumeration.mail.MailStatus"></typeHandler>
-       
+        <typeHandler handler="cn.sinjinsong.skeleton.converter.MailStatusTypeHandler"
+                     javaType="cn.sinjinsong.skeleton.enumeration.MailStatus"></typeHandler>
     </typeHandlers>
 
 </configuration>

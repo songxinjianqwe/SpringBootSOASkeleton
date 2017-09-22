@@ -17,6 +17,7 @@ import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
 import cn.sinjinsong.skeleton.service.EmailService;
 import cn.sinjinsong.skeleton.service.UserService;
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
@@ -42,15 +43,15 @@ import java.util.Map;
 @Api(value = "users", description = "用户API")
 @Slf4j
 public class UserController {
-    @Autowired
+    @Reference(version = "1.0.0")
     private UserService service;
     @Autowired
     private VerificationManager verificationManager;
-    @Autowired
+    @Reference(version = "1.0.0")
     private EmailService emailService;
     @Autowired
     private AuthenticationProperties authenticationProperties;
-    
+
     /**
      * mode 支持id、username、email、手机号
      * 只有管理员或自己才可以查询某用户的完整信息
@@ -68,7 +69,7 @@ public class UserController {
             @ApiResponse(code = 403, message = "只有管理员或用户自己能查询自己的用户信息"),
     })
     public UserDO findByKey(@PathVariable("key") @ApiParam(value = "查询关键字", required = true) String key, @RequestParam("mode") @ApiParam(value = "查询模式，可以是id或username或phone或email", required = true) String mode) {
-        
+
         QueryUserHandler handler = SpringContextUtil.getBean("QueryUserHandler", StringUtils.lowerCase(mode));
         if (handler == null) {
             throw new QueryUserModeNotFoundException(mode);
@@ -88,20 +89,20 @@ public class UserController {
             @ApiResponse(code = 400, message = "用户属性校验失败")
     })
     public void createUser(@RequestBody @Valid @ApiParam(value = "用户信息，用户的用户名、密码、昵称、邮箱不可为空", required = true) UserDO user, BindingResult result) {
-        log.info("{}",user);
+        log.info("{}", user);
         if (isUsernameDuplicated(user.getUsername())) {
             throw new UsernameExistedException(user.getUsername());
         } else if (result.hasErrors()) {
             throw new ValidationException(result.getFieldErrors());
         }
-        
+
         //生成邮箱的激活码
         String activationCode = UUIDUtil.uuid();
         //保存用户
         service.save(user);
-        
+
         verificationManager.createVerificationCode(activationCode, String.valueOf(user.getId()), authenticationProperties.getActivationCodeExpireTime());
-        log.info("{}     {}",user.getEmail(),user.getId());
+        log.info("{}     {}", user.getEmail(), user.getId());
         //发送邮件
         Map<String, Object> params = new HashMap<>();
         params.put("id", user.getId());
@@ -137,7 +138,7 @@ public class UserController {
         verificationManager.deleteVerificationCode(activationCode);
         service.update(user);
     }
-    
+
     // 更新
     @RequestMapping(method = RequestMethod.PUT)
     @PreAuthorize("#user.username == principal.username or hasRole('ADMIN')")
@@ -162,7 +163,7 @@ public class UserController {
         //user 一定不为空
         String forgetPasswordCode = UUIDUtil.uuid();
         verificationManager.createVerificationCode(forgetPasswordCode, String.valueOf(user.getId()), authenticationProperties.getForgetNameCodeExpireTime());
-        log.info("{}   {}",user.getEmail(),user.getId());
+        log.info("{}   {}", user.getEmail(), user.getId());
         //发送邮件
         Map<String, Object> params = new HashMap<>();
         params.put("id", user.getId());
@@ -170,7 +171,7 @@ public class UserController {
         emailService.sendHTML(user.getEmail(), "forgetPassword", params, null);
     }
 
-        
+
     @RequestMapping(value = "/{id}/password", method = RequestMethod.PUT)
     @ApiOperation(value = "忘记密码后可以修改密码")
     public void resetPassword(@PathVariable("id") Long id, @RequestParam("forgetPasswordCode") @ApiParam(value = "验证码", required = true) String forgetPasswordCode, @RequestParam("password") @ApiParam(value = "新密码", required = true) String password) {
@@ -180,9 +181,9 @@ public class UserController {
             throw new ActivationCodeValidationException(forgetPasswordCode);
         }
         verificationManager.deleteVerificationCode(forgetPasswordCode);
-        service.resetPassword(id,password);
+        service.resetPassword(id, password);
     }
-    
+
     @RequestMapping(value = "/{username}/duplication", method = RequestMethod.GET)
     @ApiOperation(value = "查询用户名是否重复", response = Boolean.class)
     @ApiResponses(value = {@ApiResponse(code = 401, message = "未登录")})
@@ -192,12 +193,12 @@ public class UserController {
         }
         return true;
     }
-    
+
     @RequestMapping(method = RequestMethod.GET)
     @PreAuthorize("hasRole('ADMIN')")
     @ApiOperation(value = "分页查询用户信息", response = PageInfo.class, authorizations = {@Authorization("登录权限")})
     @ApiResponses(value = {@ApiResponse(code = 401, message = "未登录")})
-    public PageInfo<UserDO> findAllUsers(@RequestParam(value="pageNum",required = false,defaultValue = PageProperties.DEFAULT_PAGE_NUM) @ApiParam(value = "页码，从1开始", defaultValue = PageProperties.DEFAULT_PAGE_NUM) Integer pageNum, @RequestParam(value = "pageSize",required = false,defaultValue = PageProperties.DEFAULT_PAGE_SIZE) @ApiParam(value = "每页记录数", defaultValue = PageProperties.DEFAULT_PAGE_SIZE) Integer pageSize) {
+    public PageInfo<UserDO> findAllUsers(@RequestParam(value = "pageNum", required = false, defaultValue = PageProperties.DEFAULT_PAGE_NUM) @ApiParam(value = "页码，从1开始", defaultValue = PageProperties.DEFAULT_PAGE_NUM) Integer pageNum, @RequestParam(value = "pageSize", required = false, defaultValue = PageProperties.DEFAULT_PAGE_SIZE) @ApiParam(value = "每页记录数", defaultValue = PageProperties.DEFAULT_PAGE_SIZE) Integer pageSize) {
         return service.findAll(pageNum, pageSize);
     }
 }

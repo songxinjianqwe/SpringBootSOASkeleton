@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 @Configuration
 @EnableScheduling
 @ConfigurationProperties(prefix = "scheduler")
-@PropertySource("classpath:task.properties")
+@PropertySource("classpath:scheduler.properties")
 @Getter
 @Setter
 public class SchedulerConfig implements SchedulingConfigurer {

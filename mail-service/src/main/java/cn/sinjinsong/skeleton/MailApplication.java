@@ -1,11 +1,10 @@
 package cn.sinjinsong.skeleton;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -15,14 +14,17 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableConfigurationProperties
 @ComponentScan({"cn.sinjinsong"})
 @Slf4j
-public class MailApplication extends SpringBootServletInitializer {
+public class MailApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(MailApplication.class, args);
+        SpringApplication app = new SpringApplication(MailApplication.class);
+        app.setWebEnvironment(false);
+        app.run(args);
     }
-    
+
+
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(MailApplication.class);
+    public void run(String... args) throws Exception {
+
     }
 }

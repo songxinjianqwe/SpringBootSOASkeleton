@@ -4,10 +4,12 @@
 package cn.sinjinsong.skeleton.domain.dto;
 
 
+import java.io.Serializable;
+
 /**
  * @Author SinjinSong
  */
-public class ThirdPartyUser  {
+public class ThirdPartyUser implements Serializable {
 
 	private String account;// 用户
 	private String userName;// 用户昵称

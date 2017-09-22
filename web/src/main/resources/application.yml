@@ -30,19 +30,6 @@ spring:
         max-file-size: 100MB
         max-request-size: 100MB
         enabled: true
-        
-    #邮箱
-    mail:
-      host: smtp.163.com
-      port: 25
-      username: songxinjianzx@163.com
-      password: 201529sxj
-      default-encoding: utf-8
-      cn.sinjinsong.skeleton.properties: 
-        mail:
-          smtp:
-            auth: true
-            timeout: 25000
     #国际化        
     messages:
       basename: i18n/messages
@@ -61,16 +48,13 @@ spring:
       auto: true
       # 使用JDK代理，只有这样才能用Spring AOP拦截Mapper接口实现类 
       proxy-target-class: false 
-    
-## Mybatis配置
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  config-location: classpath:mybatis-config.xml
-    
-# Mybatis PageHelper
-pagehelper:
-  reasonable: true
-  page-size-zero: true
-  support-methods-arguments: true
-  auto-runtime-dialect: true
-
+    #DubboConsumer
+    dubbo:
+      application: 
+        name: web-consumer
+      registry:
+        address: zookeeper://192.168.1.118:2181
+      protocol:
+        name: dubbo
+        port: 20880
+      scan: cn.sinjinsong.skeleton.controller

@@ -1,10 +1,12 @@
 package cn.sinjinsong.common.config.db;
 
+import cn.sinjinsong.common.condition.DBCondition;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
@@ -20,11 +22,12 @@ import java.util.List;
 @Slf4j
 public class DataSourceConfig {
 
-    @Value("${datasource.type}")
+    @Value("${datasource.type:}")
     private Class<? extends DataSource> dataSourceType;
     
-    @Bean(name = "writeDataSource", destroyMethod = "close", initMethod="init")
+    @Bean(name = "writeDataSource")
     @Primary
+    @Conditional(DBCondition.class)
     @ConfigurationProperties(prefix = "datasource.write")
     public DataSource writeDataSource() {
         log.info("-------------------- writeDataSource init ---------------------");
@@ -38,6 +41,7 @@ public class DataSourceConfig {
      * @return
      */
     @Bean(name = "readDataSource1")
+    @Conditional(DBCondition.class)
     @ConfigurationProperties(prefix = "datasource.read1")
     public DataSource readDataSourceOne() {
         log.info("-------------------- readDataSourceOne init ---------------------");
@@ -45,6 +49,7 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "readDataSource2")
+    @Conditional(DBCondition.class)
     @ConfigurationProperties(prefix = "datasource.read2")
     public DataSource readDataSourceTwo() {
         log.info("-------------------- readDataSourceTwo init ---------------------");
@@ -52,6 +57,7 @@ public class DataSourceConfig {
     }
 
     @Bean("readDataSources")
+    @Conditional(DBCondition.class)
     public List<DataSource> readDataSources() {
         List<DataSource> dataSources = new ArrayList<>();
         dataSources.add(readDataSourceOne());

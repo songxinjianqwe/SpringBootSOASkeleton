@@ -1,4 +1,4 @@
-package cn.sinjinsong.common.config;
+package cn.sinjinsong.skeleton.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

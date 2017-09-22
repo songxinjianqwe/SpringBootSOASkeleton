@@ -1,10 +1,3 @@
-# Tomcat
-server:
-    port: 8083
-    tomcat:
-        uri-encoding: UTF-8
-        max-threads: 1000
-        min-spare-threads: 30
 # mysql
 spring:
     # 环境 dev|test|pro
@@ -23,24 +16,24 @@ spring:
       cache-seconds: -1
       encoding: UTF-8
       fallback-to-system-locale: true
-    # THYMELEAF (ThymeleafAutoConfiguration)
-    thymeleaf: 
-      prefix: classpath:/templates/
-      suffix: .html
-      mode: HTML5
-      encoding: UTF-8
-      content-type: text/html # ;charset=<encoding> is added
-      cache: false
     aop:
       auto: true
       # 使用JDK代理，只有这样才能用Spring AOP拦截Mapper接口实现类 
       proxy-target-class: false 
-    
+    #DubboProvider
+    dubbo:
+      application: 
+        name: user-provider
+      registry:
+        address: zookeeper://192.168.1.118:2181
+      protocol:
+        name: dubbo
+        port: 20880
+      scan: cn.sinjinsong.skeleton.service.impl
 ## Mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
-    
 # Mybatis PageHelper
 pagehelper:
   reasonable: true
