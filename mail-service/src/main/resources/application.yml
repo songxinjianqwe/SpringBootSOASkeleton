@@ -1,4 +1,3 @@
-# mysql
 spring:
   # 环境 dev|test|pro
   profiles:
@@ -25,21 +24,15 @@ spring:
     application: 
       name: mail-provider
     registry:
-      address: zookeeper://192.168.1.118:2181
+      address: zookeeper://192.168.1.118:2181?backup=192.168.1.119:2181,192.168.1.120:2181
     protocol:
       name: dubbo
-      port: 20880
+      port: 20881
     scan: cn.sinjinsong.skeleton.service.impl
-    monitor: 
-      protocol: registry
-
-
-
 ## Mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
-
 # Mybatis PageHelper
 pagehelper:
   reasonable: true

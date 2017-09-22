@@ -51,8 +51,8 @@ spring:
     application: 
       name: email-provider
     registry:
-      address: zookeeper://192.168.1.118:2181
+      address: zookeeper://192.168.1.118:2181?backup=192.168.1.119:2181,192.168.1.120:2181
     protocol:
       name: dubbo
-      port: 20880
+      port: 20882
     scan: cn.sinjinsong.skeleton.service.impl

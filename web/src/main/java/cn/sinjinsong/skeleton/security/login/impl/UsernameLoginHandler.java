@@ -4,7 +4,7 @@ import cn.sinjinsong.skeleton.domain.dto.LoginDTO;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.security.login.LoginHandler;
 import cn.sinjinsong.skeleton.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Component;
 
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("LoginHandler.username")
 public class UsernameLoginHandler  implements LoginHandler {
-    @Autowired
+    @Reference(version="1.0.0")
     private UserService service;
     
     @Override

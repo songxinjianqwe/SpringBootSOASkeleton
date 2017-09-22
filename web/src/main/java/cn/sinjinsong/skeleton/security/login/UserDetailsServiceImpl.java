@@ -1,26 +1,26 @@
-package cn.sinjinsong.skeleton.service.impl;
+package cn.sinjinsong.skeleton.security.login;
 
 import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.enumeration.UserStatus;
 import cn.sinjinsong.skeleton.service.UserService;
-import com.alibaba.dubbo.config.annotation.Service;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;
 
 /**
  * Created by SinjinSong on 2017/5/8.
  */
-@Service(version="1.0.0")
+@Component
 public class UserDetailsServiceImpl implements UserDetailsService {
-    @Autowired
+    @Reference(version="1.0.0")
     private UserService userService;
-
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserDO user = userService.findByUsername(username);
