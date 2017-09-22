@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.dao;
 
 import cn.sinjinsong.skeleton.domain.entity.MailDO;
-import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
+import cn.sinjinsong.skeleton.enumeration.MailStatus;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

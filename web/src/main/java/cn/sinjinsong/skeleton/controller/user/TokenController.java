@@ -2,13 +2,13 @@ package cn.sinjinsong.skeleton.controller.user;
 
 import cn.sinjinsong.common.exception.ValidationException;
 import cn.sinjinsong.common.util.SpringContextUtil;
+import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.domain.dto.LoginDTO;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
-import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
+import cn.sinjinsong.skeleton.enumeration.UserStatus;
 import cn.sinjinsong.skeleton.exception.token.CaptchaValidationException;
 import cn.sinjinsong.skeleton.exception.token.LoginInfoInvalidException;
 import cn.sinjinsong.skeleton.exception.token.UserStatusInvalidException;
-import cn.sinjinsong.skeleton.security.domain.JWTUser;
 import cn.sinjinsong.skeleton.security.login.LoginHandler;
 import cn.sinjinsong.skeleton.security.token.TokenManager;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;

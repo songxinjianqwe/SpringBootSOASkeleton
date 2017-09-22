@@ -38,7 +38,7 @@ spring:
       username: songxinjianzx@163.com
       password: 201529sxj
       default-encoding: utf-8
-      properties: 
+      cn.sinjinsong.skeleton.properties: 
         mail:
           smtp:
             auth: true

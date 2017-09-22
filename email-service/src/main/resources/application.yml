@@ -1,17 +1,10 @@
 # Tomcat
 server:
-    port: 8080
+    port: 8081
     tomcat:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-#    port: 8443 #如果使用HTTPS，那需要监听在8443端口
-#    ssl:
-#      key-store: .keystore
-#      key-store-password: 130119
-#      key-store-type: JKS
-#      key-alias: tomcat
-      
 # mysql
 spring:
     # 环境 dev|test|pro

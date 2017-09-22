@@ -1,17 +1,10 @@
 # Tomcat
 server:
-    port: 8080
+    port: 8083
     tomcat:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-#    port: 8443 #如果使用HTTPS，那需要监听在8443端口
-#    ssl:
-#      key-store: .keystore
-#      key-store-password: 130119
-#      key-store-type: JKS
-#      key-alias: tomcat
-      
 # mysql
 spring:
     # 环境 dev|test|pro
@@ -24,25 +17,6 @@ spring:
     jackson:
         time-zone: GMT+8
     #    default-property-inclusion: non_null    #忽略null字段
-    #文件上传
-    http:
-      multipart: 
-        max-file-size: 100MB
-        max-request-size: 100MB
-        enabled: true
-        
-    #邮箱
-    mail:
-      host: smtp.163.com
-      port: 25
-      username: songxinjianzx@163.com
-      password: 201529sxj
-      default-encoding: utf-8
-      properties: 
-        mail:
-          smtp:
-            auth: true
-            timeout: 25000
     #国际化        
     messages:
       basename: i18n/messages

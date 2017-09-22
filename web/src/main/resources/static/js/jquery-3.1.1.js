@@ -511,7 +511,7 @@
         now: Date.now,
 
         // jQuery.support is not used in Core but other projects attach their
-        // properties to it so it needs to exist.
+        // cn.sinjinsong.skeleton.properties to it so it needs to exist.
         support: support
     } );
 
@@ -900,7 +900,7 @@
                 var keys = [];
 
                 function cache( key, value ) {
-                    // Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
+                    // Use (key + " ") to avoid collision with native prototype cn.sinjinsong.skeleton.properties (see Issue #157)
                     if ( keys.push( key + " " ) > Expr.cacheLength ) {
                         // Only keep the most recent entries
                         delete cache[ keys.shift() ];
@@ -1144,7 +1144,7 @@
                  ---------------------------------------------------------------------- */
 
                 // Support: IE<8
-                // Verify that getAttribute really returns attributes and not properties
+                // Verify that getAttribute really returns attributes and not cn.sinjinsong.skeleton.properties
                 // (excepting IE8 booleans)
                 support.attributes = assert(function( el ) {
                     el.className = "i";
@@ -1564,7 +1564,7 @@
                 }
 
                 var fn = Expr.attrHandle[ name.toLowerCase() ],
-                    // Don't get fooled by Object.prototype properties (jQuery #13807)
+                    // Don't get fooled by Object.prototype cn.sinjinsong.skeleton.properties (jQuery #13807)
                     val = fn && hasOwn.call( Expr.attrHandle, name.toLowerCase() ) ?
                         fn( elem, name, !documentIsHTML ) :
                         undefined;
@@ -2048,7 +2048,7 @@
                         return elem === document.activeElement && (!document.hasFocus || document.hasFocus()) && !!(elem.type || elem.href || ~elem.tabIndex);
                     },
 
-                    // Boolean properties
+                    // Boolean cn.sinjinsong.skeleton.properties
                     "enabled": createDisabledPseudo( false ),
                     "disabled": createDisabledPseudo( true ),
 
@@ -2531,7 +2531,7 @@
 
                         // Add elements passing elementMatchers directly to results
                         // Support: IE<9, Safari
-                        // Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
+                        // Tolerate NodeList cn.sinjinsong.skeleton.properties (IE: "length"; Safari: <number>) matching elements by id
                         for ( ; i !== len && (elem = elems[i]) != null; i++ ) {
                             if ( byElement && elem ) {
                                 j = 0;
@@ -4071,10 +4071,10 @@
             if ( typeof data === "string" ) {
                 cache[ jQuery.camelCase( data ) ] = value;
 
-                // Handle: [ owner, { properties } ] args
+                // Handle: [ owner, { cn.sinjinsong.skeleton.properties } ] args
             } else {
 
-                // Copy the properties one-by-one to the cache object
+                // Copy the cn.sinjinsong.skeleton.properties one-by-one to the cache object
                 for ( prop in data ) {
                     cache[ jQuery.camelCase( prop ) ] = data[ prop ];
                 }
@@ -4110,7 +4110,7 @@
             // When the key is not a string, or both a key and value
             // are specified, set or extend (existing objects) with either:
             //
-            //   1. An object of properties
+            //   1. An object of cn.sinjinsong.skeleton.properties
             //   2. A key and value
             //
             this.set( owner, key, value );
@@ -4156,7 +4156,7 @@
             if ( key === undefined || jQuery.isEmptyObject( cache ) ) {
 
                 // Support: Chrome <=35 - 45
-                // Webkit & Blink performance suffers when deleting properties
+                // Webkit & Blink performance suffers when deleting cn.sinjinsong.skeleton.properties
                 // from DOM nodes, so set to undefined instead
                 // https://bugs.chromium.org/p/chromium/issues/detail?id=378607 (bug restricted)
                 if ( owner.nodeType ) {
@@ -4184,7 +4184,7 @@
 //		paths to a single mechanism.
 //	3. Use the same single mechanism to support "private" and "user" data.
 //	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
-//	5. Avoid exposing implementation details on user objects (eg. expando properties)
+//	5. Avoid exposing implementation details on user objects (eg. expando cn.sinjinsong.skeleton.properties)
 //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 
     var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
@@ -4551,7 +4551,7 @@
             // Trust units reported by jQuery.css
             unit = unit || initialInUnit[ 3 ];
 
-            // Make sure we update the tween properties later on
+            // Make sure we update the tween cn.sinjinsong.skeleton.properties later on
             valueParts = valueParts || [];
 
             // Iteratively approximate from a nonzero starting point
@@ -5248,7 +5248,7 @@
                         for ( i = 0; i < delegateCount; i++ ) {
                             handleObj = handlers[ i ];
 
-                            // Don't conflict with Object.prototype properties (#13203)
+                            // Don't conflict with Object.prototype cn.sinjinsong.skeleton.properties (#13203)
                             sel = handleObj.selector + " ";
 
                             if ( matchedSelectors[ sel ] === undefined ) {
@@ -5395,7 +5395,7 @@
                 returnTrue :
                 returnFalse;
 
-            // Create target properties
+            // Create target cn.sinjinsong.skeleton.properties
             // Support: Safari <=6 - 7 only
             // Target should not be a text node (#504, #13143)
             this.target = ( src.target && src.target.nodeType === 3 ) ?
@@ -5410,7 +5410,7 @@
             this.type = src;
         }
 
-        // Put explicitly provided properties onto the event object
+        // Put explicitly provided cn.sinjinsong.skeleton.properties onto the event object
         if ( props ) {
             jQuery.extend( this, props );
         }
@@ -6279,7 +6279,7 @@
         if ( extra === ( isBorderBox ? "border" : "content" ) ) {
             i = 4;
 
-            // Otherwise initialize for horizontal or vertical properties
+            // Otherwise initialize for horizontal or vertical cn.sinjinsong.skeleton.properties
         } else {
             i = name === "width" ? 1 : 0;
         }
@@ -6386,7 +6386,7 @@
             }
         },
 
-        // Don't automatically add "px" to these possibly-unitless properties
+        // Don't automatically add "px" to these possibly-unitless cn.sinjinsong.skeleton.properties
         cssNumber: {
             "animationIterationCount": true,
             "columnCount": true,
@@ -6403,7 +6403,7 @@
             "zoom": true
         },
 
-        // Add in properties whose names you wish to fix before
+        // Add in cn.sinjinsong.skeleton.properties whose names you wish to fix before
         // setting or getting the value
         cssProps: {
             "float": "cssFloat"
@@ -6445,7 +6445,7 @@
                     return;
                 }
 
-                // If a number was passed in, add the unit (except for certain CSS properties)
+                // If a number was passed in, add the unit (except for certain CSS cn.sinjinsong.skeleton.properties)
                 if ( type === "number" ) {
                     value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
                 }
@@ -6571,7 +6571,7 @@
         }
     );
 
-// These hooks are used by animate to expand properties
+// These hooks are used by animate to expand cn.sinjinsong.skeleton.properties
     jQuery.each( {
         margin: "",
         padding: "",
@@ -6701,7 +6701,7 @@
 
                 // Use step hook for back compat.
                 // Use cssHook if its there.
-                // Use .style if available and use plain properties where available.
+                // Use .style if available and use plain cn.sinjinsong.skeleton.properties where available.
                 if ( jQuery.fx.step[ tween.prop ] ) {
                     jQuery.fx.step[ tween.prop ]( tween );
                 } else if ( tween.elem.nodeType === 1 &&
@@ -7602,7 +7602,7 @@
             var ret, hooks,
                 nType = elem.nodeType;
 
-            // Don't get/set properties on text, comment and attribute nodes
+            // Don't get/set cn.sinjinsong.skeleton.properties on text, comment and attribute nodes
             if ( nType === 3 || nType === 8 || nType === 2 ) {
                 return;
             }

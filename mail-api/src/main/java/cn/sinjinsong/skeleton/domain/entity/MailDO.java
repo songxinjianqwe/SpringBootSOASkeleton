@@ -1,6 +1,6 @@
 package cn.sinjinsong.skeleton.domain.entity;
 
-import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
+import cn.sinjinsong.skeleton.enumeration.MailStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

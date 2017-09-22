@@ -1,15 +1,16 @@
 package cn.sinjinsong.skeleton.controller.mail;
 
+
 import cn.sinjinsong.common.exception.ValidationException;
-import cn.sinjinsong.skeleton.domain.dto.mail.MailDTO;
-import cn.sinjinsong.skeleton.domain.entity.mail.MailDO;
-import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
-import cn.sinjinsong.skeleton.enumeration.mail.QueryMailTarget;
-import cn.sinjinsong.skeleton.enumeration.mail.SendMode;
-import cn.sinjinsong.skeleton.exception.mail.MailStatusNotFoundException;
-import cn.sinjinsong.skeleton.exception.mail.MailTargetNotFoundException;
-import cn.sinjinsong.skeleton.security.domain.JWTUser;
-import cn.sinjinsong.skeleton.service.mail.MailService;
+import cn.sinjinsong.skeleton.domain.dto.JWTUser;
+import cn.sinjinsong.skeleton.domain.dto.MailDTO;
+import cn.sinjinsong.skeleton.domain.entity.MailDO;
+import cn.sinjinsong.skeleton.enumeration.MailStatus;
+import cn.sinjinsong.skeleton.enumeration.QueryMailTarget;
+import cn.sinjinsong.skeleton.enumeration.SendMode;
+import cn.sinjinsong.skeleton.exception.MailStatusNotFoundException;
+import cn.sinjinsong.skeleton.exception.MailTargetNotFoundException;
+import cn.sinjinsong.skeleton.service.MailService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;

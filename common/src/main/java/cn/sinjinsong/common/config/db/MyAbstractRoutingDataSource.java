@@ -1,6 +1,6 @@
 package cn.sinjinsong.common.config.db;
 
-import cn.sinjinsong.skeleton.enumeration.db.DataSourceType;
+import cn.sinjinsong.common.enumeration.db.DataSourceType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 

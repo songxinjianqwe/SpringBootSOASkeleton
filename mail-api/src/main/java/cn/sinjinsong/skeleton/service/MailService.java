@@ -2,7 +2,7 @@ package cn.sinjinsong.skeleton.service;
 
 
 import cn.sinjinsong.skeleton.domain.entity.MailDO;
-import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
+import cn.sinjinsong.skeleton.enumeration.MailStatus;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;

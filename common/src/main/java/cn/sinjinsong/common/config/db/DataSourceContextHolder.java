@@ -1,6 +1,7 @@
 package cn.sinjinsong.common.config.db;
 
-import cn.sinjinsong.skeleton.enumeration.db.DataSourceType;
+
+import cn.sinjinsong.common.enumeration.db.DataSourceType;
 
 /**
  * Created by SinjinSong on 2017/8/20.

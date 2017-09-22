@@ -1,6 +1,6 @@
 package cn.sinjinsong.skeleton.converter;
 
-import cn.sinjinsong.skeleton.security.domain.JWTUser;
+import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import java.security.Principal;

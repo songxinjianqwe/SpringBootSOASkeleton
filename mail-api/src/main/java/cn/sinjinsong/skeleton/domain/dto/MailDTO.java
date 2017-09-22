@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.domain.dto;
 
 
-import cn.sinjinsong.skeleton.enumeration.mail.SendMode;
+import cn.sinjinsong.skeleton.enumeration.SendMode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

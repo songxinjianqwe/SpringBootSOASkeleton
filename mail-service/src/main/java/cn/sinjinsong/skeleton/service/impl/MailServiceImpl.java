@@ -1,13 +1,14 @@
 package cn.sinjinsong.skeleton.service.impl;
 
-import cn.sinjinsong.skeleton.dao.dao.mail.MailDOMapper;
-import cn.sinjinsong.skeleton.dao.dao.mail.MailTextDOMapper;
+import cn.sinjinsong.skeleton.dao.MailDOMapper;
+import cn.sinjinsong.skeleton.dao.MailTextDOMapper;
 import cn.sinjinsong.skeleton.domain.entity.MailDO;
 import cn.sinjinsong.skeleton.domain.entity.MailTextDO;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
-import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
-import cn.sinjinsong.skeleton.exception.mail.MailReceiverNotFoundException;
+import cn.sinjinsong.skeleton.enumeration.MailStatus;
+import cn.sinjinsong.skeleton.exception.MailReceiverNotFoundException;
 import cn.sinjinsong.skeleton.service.MailService;
+import cn.sinjinsong.skeleton.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,7 @@ public class MailServiceImpl implements MailService {
     @Autowired
     private MailTextDOMapper mailTextDOMapper;
     @Autowired
-    private UserDOMapper userDOMapper;
-    
+    private UserService userService;
     
     @Transactional
     @Override
@@ -68,7 +68,7 @@ public class MailServiceImpl implements MailService {
     @Transactional
     @Override
     public void broadcast(Long sender, String text){
-        send(sender,userDOMapper.findAllUserIds(),text);
+        send(sender,userService.findAllUserIds(),text);
     }
 
     @Transactional

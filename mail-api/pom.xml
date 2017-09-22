@@ -11,5 +11,11 @@
 
     <artifactId>mail-api</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>cn.sinjinsong</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

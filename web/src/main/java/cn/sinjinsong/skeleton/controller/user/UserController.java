@@ -1,20 +1,22 @@
 package cn.sinjinsong.skeleton.controller.user;
 
+
 import cn.sinjinsong.common.exception.ValidationException;
+import cn.sinjinsong.common.properties.PageProperties;
 import cn.sinjinsong.common.util.FileUtil;
 import cn.sinjinsong.common.util.SpringContextUtil;
 import cn.sinjinsong.common.util.UUIDUtil;
 import cn.sinjinsong.skeleton.controller.user.handler.QueryUserHandler;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
-import cn.sinjinsong.skeleton.enumeration.user.UserStatus;
+import cn.sinjinsong.skeleton.enumeration.UserStatus;
 import cn.sinjinsong.skeleton.exception.token.ActivationCodeValidationException;
 import cn.sinjinsong.skeleton.exception.user.QueryUserModeNotFoundException;
 import cn.sinjinsong.skeleton.exception.user.UserNotFoundException;
 import cn.sinjinsong.skeleton.exception.user.UsernameExistedException;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
-import cn.sinjinsong.skeleton.properties.PageProperties;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
-import cn.sinjinsong.skeleton.service.email.EmailService;
+import cn.sinjinsong.skeleton.service.EmailService;
+import cn.sinjinsong.skeleton.service.UserService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;

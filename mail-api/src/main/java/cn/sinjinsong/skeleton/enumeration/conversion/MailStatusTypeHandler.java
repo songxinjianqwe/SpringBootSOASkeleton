@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.enumeration.conversion;
 
 
-import cn.sinjinsong.skeleton.enumeration.mail.MailStatus;
+import cn.sinjinsong.skeleton.enumeration.MailStatus;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeHandler;
 

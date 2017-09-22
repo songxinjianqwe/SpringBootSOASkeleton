@@ -84,7 +84,7 @@
 7. 引用其他自定义配置文件中的属性的方式：
      - @Component
      - @ConfigurationProperties(prefix = "auth")
-     - @PropertySource("classpath:auth.properties")
+     - @PropertySource("classpath:auth.cn.sinjinsong.skeleton.properties")
      - setter & getter 
 
 8. 所以写静态资源位置的时候，不要带上映射的目录名（如/static/，/public/ ，/resources/，/META-INF/resources/）！
@@ -142,7 +142,7 @@
     所有的html都放在/templates下
 
 # ElasticSearch 学习
-## application.properties
+## application.cn.sinjinsong.skeleton.properties
 
 默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口。
 

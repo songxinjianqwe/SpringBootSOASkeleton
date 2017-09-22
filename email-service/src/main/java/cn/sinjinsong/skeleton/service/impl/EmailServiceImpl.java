@@ -1,8 +1,7 @@
 package cn.sinjinsong.skeleton.service.impl;
 
 import cn.sinjinsong.common.exception.file.FileNotFoundException;
-import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
-import cn.sinjinsong.skeleton.service.email.EmailService;
+import cn.sinjinsong.skeleton.service.EmailService;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +14,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
+import cn.sinjinsong.skeleton.properties.EmailSubjectProperties;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;

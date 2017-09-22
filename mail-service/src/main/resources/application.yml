@@ -1,6 +1,6 @@
 # Tomcat
 server:
-    port: 8080
+    port: 8082
     tomcat:
         uri-encoding: UTF-8
         max-threads: 1000
@@ -38,7 +38,7 @@ spring:
       username: songxinjianzx@163.com
       password: 201529sxj
       default-encoding: utf-8
-      properties: 
+      cn.sinjinsong.skeleton.properties: 
         mail:
           smtp:
             auth: true

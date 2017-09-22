@@ -15,8 +15,6 @@
         <module>mail-service</module>
         <module>email-api</module>
         <module>email-service</module>
-        <module>article-api</module>
-        <module>article-service</module>
     </modules>
     <packaging>pom</packaging>
     
@@ -36,7 +34,6 @@
         <java.version>1.8</java.version>
         <protostuff.version>1.5.2</protostuff.version>
         <swagger.version>2.6.1</swagger.version>
-        <!--<start-class>cn.sinjinsong.skeleton.SpringBootSkeletonApplication</start-class>-->
     </properties>
 
     <dependencies>

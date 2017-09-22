@@ -2,7 +2,7 @@ package cn.sinjinsong.skeleton.service.impl;
 
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.enumeration.UserStatus;
-import cn.sinjinsong.skeleton.security.domain.JWTUser;
+import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

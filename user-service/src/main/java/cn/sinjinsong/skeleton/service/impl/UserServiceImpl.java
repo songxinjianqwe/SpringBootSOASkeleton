@@ -1,7 +1,7 @@
 package cn.sinjinsong.skeleton.service.impl;
 
-import cn.sinjinsong.skeleton.dao.dao.RoleDOMapper;
-import cn.sinjinsong.skeleton.dao.dao.UserDOMapper;
+import cn.sinjinsong.skeleton.dao.RoleDOMapper;
+import cn.sinjinsong.skeleton.dao.UserDOMapper;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.enumeration.UserStatus;
 import cn.sinjinsong.skeleton.service.UserService;
@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Created by SinjinSong on 2017/4/27.
@@ -81,7 +82,12 @@ public class UserServiceImpl implements UserService {
         userDO.setPassword(passwordEncoder.encode(newPassword));
         userDOMapper.updateByPrimaryKeySelective(userDO);
     }
-    
+
+    @Override
+    public List<Long> findAllUserIds() {
+        return userDOMapper.findAllUserIds();
+    }
+
 
     @Override
     public PageInfo<UserDO> findAll(int pageNum, int pageSize) {
