@@ -3,6 +3,7 @@ package cn.sinjinsong.skeleton.security.filter;
 import cn.sinjinsong.skeleton.domain.dto.TokenCheckResult;
 import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.security.token.TokenManager;
+import com.alibaba.dubbo.config.annotation.Reference;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,8 +24,9 @@ import java.io.IOException;
 @Slf4j
 public class JWTAuthenticationTokenFilter extends OncePerRequestFilter {
 
-    @Autowired
+    @Reference(version = "1.0.0")
     private UserDetailsService userDetailsService;
+
     @Autowired
     private TokenManager tokenManager;
 

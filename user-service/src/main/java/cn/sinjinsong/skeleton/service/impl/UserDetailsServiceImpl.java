@@ -1,22 +1,22 @@
 package cn.sinjinsong.skeleton.service.impl;
 
+import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.enumeration.UserStatus;
-import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.service.UserService;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
 /**
  * Created by SinjinSong on 2017/5/8.
  */
-@Service
+@Service(version="1.0.0")
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserService userService;

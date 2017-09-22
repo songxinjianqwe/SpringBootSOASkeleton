@@ -2,6 +2,7 @@ package cn.sinjinsong.skeleton.config;
 
 import cn.sinjinsong.skeleton.security.endpoint.JWTAuthenticationEntryPoint;
 import cn.sinjinsong.skeleton.security.filter.JWTAuthenticationTokenFilter;
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,19 +23,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private JWTAuthenticationEntryPoint unauthorizedHandler;
-    private UserDetailsService userDetailsService;
-    private AccessDeniedHandler accessDeniedHandler;
-
     @Autowired
-    public SecurityConfig(JWTAuthenticationEntryPoint unauthorizedHandler,
-                          UserDetailsService userDetailsService,
-                          AccessDeniedHandler accessDeniedHandler) {
-        this.unauthorizedHandler = unauthorizedHandler;
-        this.userDetailsService = userDetailsService;
-        this.accessDeniedHandler = accessDeniedHandler;
-
-    }
+    private JWTAuthenticationEntryPoint unauthorizedHandler;
+    @Reference(version = "1.0.0")
+    private UserDetailsService userDetailsService;
+    @Autowired
+    private AccessDeniedHandler accessDeniedHandler;
 
     @Autowired
     public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
@@ -94,7 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagge‌​r-ui.html",
                         "/swagger-resources/configuration/security").permitAll()
                 //允许访问websocket页面
-                .antMatchers(HttpMethod.GET,"/ws").permitAll()
+                .antMatchers(HttpMethod.GET, "/ws").permitAll()
                 //允许向websocket的某个endpoint发送消息
                 .antMatchers("/endpoint/**").permitAll()
                 //允许访问Druid监控
@@ -113,7 +107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/users/*/password/reset_validation").permitAll()
                 //用户忘记密码后重置密码
                 .antMatchers(HttpMethod.PUT, "/users/*/password").permitAll()
-                .antMatchers(HttpMethod.GET,"/articles/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/articles/**").permitAll()
                 //获取token
                 .antMatchers(HttpMethod.POST, "/tokens").permitAll().and()
                 //除上面外的所有请求全部需要鉴权认证
