@@ -11,11 +11,11 @@ import cn.sinjinsong.skeleton.enumeration.SendMode;
 import cn.sinjinsong.skeleton.exception.MailStatusNotFoundException;
 import cn.sinjinsong.skeleton.exception.MailTargetNotFoundException;
 import cn.sinjinsong.skeleton.service.MailService;
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
@@ -31,7 +31,7 @@ import javax.validation.Valid;
 @Api(value = "mails", description = "站内信模块")
 @Slf4j
 public class MailController {
-    @Reference(version="1.0.0")
+    @Autowired
     private MailService mailService;
     
     @RequestMapping(value = "/{targetId}", method = RequestMethod.GET)

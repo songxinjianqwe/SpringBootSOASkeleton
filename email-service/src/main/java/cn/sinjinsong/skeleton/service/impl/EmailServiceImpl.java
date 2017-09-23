@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * Created by SinjinSong on 2017/5/5.
  */
-@Service(version="1.0.0")
+@Service
 @Async("emailExecutor")
 @ConfigurationProperties(prefix = "spring.mail")
 @Getter

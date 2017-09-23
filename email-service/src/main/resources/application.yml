@@ -46,13 +46,3 @@ spring:
     auto: true
     # 使用JDK代理，只有这样才能用Spring AOP拦截Mapper接口实现类 
     proxy-target-class: false 
-      #DubboProvider
-  dubbo:
-    application: 
-      name: email-provider
-    registry:
-      address: zookeeper://192.168.1.118:2181?backup=192.168.1.119:2181,192.168.1.120:2181
-    protocol:
-      name: dubbo
-      port: 20882
-    scan: cn.sinjinsong.skeleton.service.impl

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * Created by SinjinSong on 2017/9/22.
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableConfigurationProperties
 @ComponentScan({"cn.sinjinsong"})
+@ImportResource("classpath:dubbo.xml")
 @Slf4j
 public class EmailApplication implements CommandLineRunner {
 
@@ -21,6 +23,14 @@ public class EmailApplication implements CommandLineRunner {
         SpringApplication app = new SpringApplication(EmailApplication.class);
         app.setWebEnvironment(false);
         app.run(args);
+        synchronized (EmailApplication.class) {
+            while (true) {
+                try {
+                    EmailApplication.class.wait();
+                } catch (Throwable e) {
+                }
+            }
+        }
     }
 
     @Override

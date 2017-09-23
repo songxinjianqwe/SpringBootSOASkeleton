@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.sinjinsong.skeleton.dao.dao.dao.mail.MailDOMapper">
-
+<mapper namespace="cn.sinjinsong.skeleton.dao.MailDOMapper">
+    <!--User的ResultMap被拷贝到这里-->
+    <resultMap id="BriefUserResultMap" type="cn.sinjinsong.skeleton.domain.entity.UserDO">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <result column="reg_time" property="regTime"/>
+        <result column="avatar" property="avatar"/>
+    </resultMap>
+    
     <resultMap id="BaseResultMap" type="cn.sinjinsong.skeleton.domain.entity.MailDO">
         <id column="id" property="id"></id>
         <result column="mail_status" property="mailStatus"
                 javaType="cn.sinjinsong.skeleton.enumeration.MailStatus"></result>
-        <association property="sender" column="sender"
-                     select="cn.sinjinsong.skeleton.dao.dao.dao.UserDOMapper.findBriefInfoById"></association>
-        <association property="receiver" column="receiver"
-                     select="cn.sinjinsong.skeleton.dao.dao.dao.UserDOMapper.findBriefInfoById"></association>
+        <association property="sender" column="sender" javaType="cn.sinjinsong.skeleton.domain.entity.UserDO"
+                     resultMap="BriefUserResultMap"></association>
+        <association property="receiver" column="receiver" javaType="cn.sinjinsong.skeleton.domain.entity.UserDO"
+                     resultMap="BriefUserResultMap"></association>
         <association property="text" column="text"
-                     select="cn.sinjinsong.skeleton.dao.dao.dao.mail.MailTextDOMapper.selectByPrimaryKey"></association>
+                     select="cn.sinjinsong.skeleton.dao.MailTextDOMapper.selectByPrimaryKey"></association>
     </resultMap>
-    
+
     <sql id="Base_Column_List">
         id, sender ,receiver , mail_status,text
     </sql>
@@ -39,12 +49,12 @@
 
     <insert id="insertBatch">
         insert into mail (id, sender, receiver,mail_status, text)
-        values 
+        values
         <foreach collection="mails" item="mail" separator=",">
             (#{mail.id}, #{mail.sender.id},#{mail.receiver.id},#{mail.mailStatus},#{mail.text.id})
         </foreach>
     </insert>
-    
+
     <select id="findByReceiver" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>

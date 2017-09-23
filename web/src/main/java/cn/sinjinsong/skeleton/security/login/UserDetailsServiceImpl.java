@@ -4,7 +4,7 @@ import cn.sinjinsong.skeleton.domain.dto.JWTUser;
 import cn.sinjinsong.skeleton.domain.entity.UserDO;
 import cn.sinjinsong.skeleton.enumeration.UserStatus;
 import cn.sinjinsong.skeleton.service.UserService;
-import com.alibaba.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  */
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
-    @Reference(version="1.0.0")
+    @Autowired
     private UserService userService;
     
     @Override

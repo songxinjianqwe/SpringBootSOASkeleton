@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * Created by SinjinSong on 2017/9/22.
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableConfigurationProperties
 @ComponentScan({"cn.sinjinsong"})
+@ImportResource("classpath:dubbo.xml")
 @Slf4j
 public class MailApplication implements CommandLineRunner {
 
@@ -20,6 +22,14 @@ public class MailApplication implements CommandLineRunner {
         SpringApplication app = new SpringApplication(MailApplication.class);
         app.setWebEnvironment(false);
         app.run(args);
+        synchronized (MailApplication.class) {
+            while (true) {
+                try {
+                    MailApplication.class.wait();
+                } catch (Throwable e) {
+                }
+            }
+        }
     }
 
 

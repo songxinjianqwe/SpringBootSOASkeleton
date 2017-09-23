@@ -9,10 +9,9 @@ import cn.sinjinsong.skeleton.enumeration.MailStatus;
 import cn.sinjinsong.skeleton.exception.MailReceiverNotFoundException;
 import cn.sinjinsong.skeleton.service.MailService;
 import cn.sinjinsong.skeleton.service.UserService;
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
@@ -23,13 +22,13 @@ import java.util.stream.Collectors;
 /**
  * Created by SinjinSong on 2017/5/4.
  */
-@Service(version = "1.0.0")
+@Service
 public class MailServiceImpl implements MailService {
     @Autowired
     private MailDOMapper mailDOMapper;
     @Autowired
     private MailTextDOMapper mailTextDOMapper;
-    @Reference(version = "1.0.0")
+    @Autowired
     private UserService userService;
     
     @Transactional

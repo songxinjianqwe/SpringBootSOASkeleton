@@ -1,4 +1,3 @@
-# mysql
 spring:
   # 环境 dev|test|pro
   profiles:
@@ -20,21 +19,10 @@ spring:
     auto: true
     # 使用JDK代理，只有这样才能用Spring AOP拦截Mapper接口实现类 
     proxy-target-class: false 
-  dubbo:
-    application: 
-      name: user-provider
-    registry:
-      address: zookeeper://192.168.1.118:2181?backup=192.168.1.119:2181,192.168.1.120:2181
-    protocol:
-      name: dubbo
-      port: 20880
-    scan: cn.sinjinsong.skeleton.service.impl
-
 ## Mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
-
 # Mybatis PageHelper
 pagehelper:
   reasonable: true

@@ -7,11 +7,12 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BaseRESTException extends RuntimeException {
+public class BaseRESTException extends RuntimeException implements Serializable{
     private HttpStatus status;
     private int code;
     private List<RESTFieldError> error;

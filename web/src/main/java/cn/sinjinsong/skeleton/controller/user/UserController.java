@@ -17,7 +17,6 @@ import cn.sinjinsong.skeleton.properties.AuthenticationProperties;
 import cn.sinjinsong.skeleton.security.verification.VerificationManager;
 import cn.sinjinsong.skeleton.service.EmailService;
 import cn.sinjinsong.skeleton.service.UserService;
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
@@ -43,11 +42,11 @@ import java.util.Map;
 @Api(value = "users", description = "用户API")
 @Slf4j
 public class UserController {
-    @Reference(version = "1.0.0")
+    @Autowired
     private UserService service;
     @Autowired
     private VerificationManager verificationManager;
-    @Reference(version = "1.0.0")
+    @Autowired
     private EmailService emailService;
     @Autowired
     private AuthenticationProperties authenticationProperties;

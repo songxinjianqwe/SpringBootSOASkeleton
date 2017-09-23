@@ -121,5 +121,4 @@ public class UserDO implements Serializable {
     public UserDO(Long id) {
         this.id = id;
     }
-
 }

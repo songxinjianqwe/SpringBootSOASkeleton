@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("LoginHandler.email")
 public class EmailLoginHandler implements LoginHandler {
-    @Reference(version="1.0.0")
+    @Autowired
     private UserService service;
     
     @Override
